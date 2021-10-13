@@ -1,0 +1,2 @@
+class MigrantSheltersController < ApplicationController
+end

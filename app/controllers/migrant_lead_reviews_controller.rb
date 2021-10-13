@@ -1,0 +1,2 @@
+class MigrantLeadReviewsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class MigrantsController < ApplicationController
+end
