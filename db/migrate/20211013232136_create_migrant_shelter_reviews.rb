@@ -6,6 +6,7 @@ class CreateMigrantShelterReviews < ActiveRecord::Migration[6.1]
       t.integer :score
       t.text :review
 
+
       t.timestamps
     end
   end
