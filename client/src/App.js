@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AuthenticatedApp from "./components/AuthenticatedApp";
-import Login from "./components/Login";
+import LoginTree from "./components/Login";
 import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -45,7 +45,7 @@ function App() {
           currentUser={currentUser}
         />
       ) : (
-        <Login setCurrentUser={setCurrentUser} />
+        <LoginTree setCurrentUser={setCurrentUser} />
       )}
     </Router>}
     </div>

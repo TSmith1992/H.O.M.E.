@@ -66,6 +66,12 @@ function Login({ setCurrentUser }) {
             Log In
           </button>
         </p>
+        <p>-- or --</p>
+        <button className="login">
+          <Link to="/signup" class="Links">
+            Sign Up
+          </Link>
+        </button>
       </form>
     </div>
   );
