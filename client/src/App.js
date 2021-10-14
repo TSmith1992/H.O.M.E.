@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import Button from '@mui/material/Button';
+import SaveIcon from '@material-ui/icons/Save';
 
 function App() {
-  // const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((r) => r.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
 
   return (
     <div className="App">
-      <Button>I'm a Button </Button>
-      <h1>Page Count:</h1>
+      <Button 
+      startIcon={<SaveIcon/>}
+      variant="contained" 
+      color="primary">I'm a Button </Button>
     </div>
   );
 }
