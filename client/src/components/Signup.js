@@ -1,19 +1,31 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import countries from 'i18n-iso-countries'
+import enLocale from 'i18n-iso-countries/langs/en.json'
 
 function Signup({ setCurrentUser }) {
   const history = useHistory();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [profilePic, setProfilePic] = useState("");
-  const [hairStylePic, setHairStylePic] = useState("");
+  const [picture, setPicture] = useState("");
+  const [gender, setGender] = useState("");
+  const [birthdate, setBirthDate] = useState();
   const [description, setDescription] = useState("");
+  const [originCountry, setOriginCountry] = useState("")
   const [errors, setErrors] = useState("");
+  countries.registerLocale(enLocale)
+  const countryObj = countries.getNames("en", { select: "official" });
+  const countryArr = Object.entries(countryObj).map(([key, value]) => {
+    return {
+      label: value,
+      value: key
+    };
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/clients", {
+    fetch("/migrants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,9 +34,11 @@ function Signup({ setCurrentUser }) {
         name,
         password,
         password_confirmation: passwordConfirmation,
-        hairstyle_pic: hairStylePic,
-        profile_pic: profilePic,
+        gender: gender,
+        picture: picture,
         description,
+        birthdate: birthdate,
+        origin_country: originCountry
       }),
     }).then((res) => {
       if (res.ok) {
@@ -41,10 +55,13 @@ function Signup({ setCurrentUser }) {
     });
   }
 
+
+
+
   return (
     <div className="authForm">
       <form onSubmit={handleSubmit}>
-        <h1>Client Sign Up Page</h1>
+        <h1>Migrant Account Creation Page</h1>
         <p>
           <label htmlFor="name">Name:</label>
           <br></br>
@@ -76,28 +93,59 @@ function Signup({ setCurrentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="profile_pic">Profile Picture:</label>
+          <label htmlFor="picture">Profile Picture:</label>
           <br></br>
           <input
-            type="profile_pic"
-            name="profile_pic"
-            value={profilePic}
-            onChange={(e) => setProfilePic(e.target.value)}
+            type="picture"
+            name="picture"
+            value={picture}
+            onChange={(e) => setPicture(e.target.value)}
           />
         </p>
+        <p></p>
+        Please Choose a Gender Identity:
+        <p></p>
+        <select
+          onChange={(e) => setGender(e.target.value)}
+          required
+          placeholder="Please Choose"
+          className="form-control"
+        >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Non-Binary">Non-Binary</option>
+        </select>
         <p>
-          <label htmlFor="hairstyle_pic">Preferred Hairstyle:</label>
-          <br></br>
+          <label htmlFor="birthdate">
+            When were you born?
+          </label><br></br>
           <input
-            type="hairstyle_pic"
-            name="hairstyle_pic"
-            value={hairStylePic}
-            onChange={(e) => setHairStylePic(e.target.value)}
+            type="date"
+            name="birthdate"
+            value={birthdate}
+            onChange={(e) => setBirthDate(e.target.value)}
           />
         </p>
+        <label htmlFor="origin_country">
+            Where were you born?
+          </label><br></br>
+          <select
+        style={{ width: "150px" }}
+        value={originCountry}
+        onChange={(e) => setOriginCountry(e.target.value)}
+      >
+        {!!countryArr?.length &&
+          countryArr.map(({ label, value }) => (
+              <option>{label}</option>
+            // <key={value} value={value}>
+            
+            //   {label}
+            // </>
+          ))}
+      </select>
         <p>
           <label htmlFor="description">
-            What would you like for your Stylist to know about you?
+            What would you like for us to know about you?
           </label>
           <br></br>
           <textarea
@@ -125,7 +173,7 @@ function Signup({ setCurrentUser }) {
         </p>
         <p>-- or --</p>
         <button className="login">
-          <Link to="/" class='Links'>Log In</Link>
+          <Link to="/login" class='Links'>Log In</Link>
           </button>
       </form>
     </div>

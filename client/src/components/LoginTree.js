@@ -9,7 +9,7 @@ function LoginTree({ setCurrentUser }) {
       <Route exact path="/">
         <Login setCurrentUser={setCurrentUser} />
       </Route>
-      <Route exact path="/signupTree">
+      <Route exact path="/signup">
         <Signup setCurrentUser={setCurrentUser} />
       </Route>
       <Redirect to="/" />
