@@ -1,7 +1,7 @@
 class MigrantLeadReview < ApplicationRecord
-  belongs_to :migrant_id
-  belongs_to :lead_id
+  belongs_to :migrant
+  belongs_to :lead
 
-  validates :score, :review, :migrant_id, :lead_id, presence: true
+  validates :score, :review, :migrant, :lead, presence: true
   validates :review, length:{minimum: 50}
 end

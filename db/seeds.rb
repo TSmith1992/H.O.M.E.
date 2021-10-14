@@ -10,30 +10,29 @@ puts "...Seeding Migrants"
 
 600.times do
     Migrant.create(
-        name: Faker::Name.name ,
+        name: Faker::Name.name,
         password:"123", 
         birthdate: Faker::Date.between(from: '1960-01-01', to: '2021-10-01'),
         gender: Faker::Gender.binary_type,
-        origin_country: Faker::Address.country.exclude("United States of America"),
+        origin_country: Faker::Address.country,
         unit_leader: false,
         unit_member: false,
-        unit_id: null,
+        unit_id: nil,
         description: Faker::Quote.most_interesting_man_in_the_world,
         picture: "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10n7ovy_9b42e613.jpeg",
-        shelter: true,
         processed: false
     )
 end
 
 puts "... DONE Seeding Migrants"
 
-###=======###
+# ###=======###
 
 puts "...Seeding Leads"
 
 4.times do 
     Lead.create(
-        name: Faker::Name.name ,
+        name: Faker::Name.name,
         password:"123",
         description: Faker::Quote.most_interesting_man_in_the_world,
         picture: "https://cdn.mos.cms.futurecdn.net/sAtmV58zgo6mQ3RqfxBTrd.jpg",

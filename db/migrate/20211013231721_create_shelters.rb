@@ -1,7 +1,7 @@
 class CreateShelters < ActiveRecord::Migration[6.1]
   def change
     create_table :shelters do |t|
-      t.belongs_to :lead_id, null: false, foreign_key: true
+      t.belongs_to :lead, null: false, foreign_key: true
       t.string :name
       t.string :address
       t.string :state

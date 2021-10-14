@@ -1,6 +1,6 @@
 class MigrantShelter < ApplicationRecord
-  belongs_to :migrant_id
-  belongs_to :shelter_id
+  belongs_to :migrant
+  belongs_to :shelter
 
-  validates :active, uniqueness: {scope:[:migrant_id], message: "You cannot be living in more than one shelter at a time."}
+  validates :active, uniqueness: {scope:[:migrant], message: "You cannot be living in more than one shelter at a time."}
 end
