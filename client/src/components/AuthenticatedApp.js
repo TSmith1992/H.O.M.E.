@@ -16,6 +16,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     });
   };
 
+  console.log('Current User,   ', currentUser)
   return (
     <div className="App">
       <nav className='topNav'>
