@@ -4,4 +4,6 @@ class UnitSerializer < ActiveModel::Serializer
   has_one :migrant_id_A
   has_one :migrant_id_B
   has_one :migrant_id_C
+
+  belongs_to :migrant
 end
