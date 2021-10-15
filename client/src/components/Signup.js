@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 import countries from 'i18n-iso-countries'
 import enLocale from 'i18n-iso-countries/langs/en.json'
 
-function Signup({ setCurrentUser }) {
+function Signup({ setCurrentUser, currentUser }) {
   const history = useHistory();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -44,7 +44,7 @@ function Signup({ setCurrentUser }) {
       if (res.ok) {
         res.json().then((user) => {
           setCurrentUser(user);
-          history.push("/homepage");
+          history.push('/homepage')
         });
       } else {
         res.json().then((errors) => {
@@ -108,7 +108,7 @@ function Signup({ setCurrentUser }) {
         <select
           onChange={(e) => setGender(e.target.value)}
           required
-          placeholder="Please Choose"
+          placeholder="Male"
           className="form-control"
         >
           <option value="Male">Male</option>

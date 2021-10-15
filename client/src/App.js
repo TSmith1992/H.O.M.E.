@@ -32,13 +32,14 @@ function App() {
   return (
     <div className="App">
      <Router>
-      {currentUser ? (
+      {currentUser ?
+       (
         <AuthenticatedApp
           setCurrentUser={setCurrentUser}
           currentUser={currentUser}
         />
       ) : (
-        <LoginTree setCurrentUser={setCurrentUser} />
+        <LoginTree setCurrentUser={setCurrentUser} currentUser={currentUser} />
       )}
     </Router>
     </div>

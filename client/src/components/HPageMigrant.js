@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function HPageMigrant({ currentUser }) {
+
+
   return (
     <div>
-        <h1>Hi {currentUser.name}!</h1>
-        <h3 className="Title">
-          Find on this page some general information about you and your
-          activities!
-        </h3>
+      <h1>Hi {currentUser.name}!</h1>
+      <h3 className="Title">
+        Find on this page some general information about you and your
+        activities!
+      </h3>
       <div>
         <img
           src={currentUser.picture}
@@ -22,8 +24,16 @@ export default function HPageMigrant({ currentUser }) {
         <h3>{currentUser.origin_country}</h3>
         <p>Birthdate:</p>
         <h3>{currentUser.birthdate}</h3>
-        <h3>{currentUser.unit_member? <>You are currently part of a migrant unit </>:<>You are currently <strong>NOT</strong> part of a migrant unit</>}</h3>
-        <button >
+        <h3>
+          {currentUser.unit_member ? (
+            <>You are currently part of a migrant unit </>
+          ) : (
+            <>
+              You are currently <strong>NOT</strong> part of a migrant unit
+            </>
+          )}
+        </h3>
+        <button>
           <Link to="/unitedit" class="Links">
             Migrant Unit Page
           </Link>
@@ -44,7 +54,7 @@ export default function HPageMigrant({ currentUser }) {
         <h2>{currentUser.shelters[0].state}</h2>
         <p>Shelter Score:</p>
         <h2>{currentUser.shelters[0].avg_rating_shelter}</h2>
-        <button >
+        <button>
           <Link to="/reviews" class="Links">
             Read more about {currentUser.shelters[0].name}
           </Link>
@@ -61,7 +71,7 @@ export default function HPageMigrant({ currentUser }) {
         <h2>{currentUser.lead_info.name}</h2>
         <p>Description:</p>
         <h2>{currentUser.lead_info.description}</h2>
-        <button >
+        <button>
           <Link to="/reviews" class="Links">
             Read more about {currentUser.lead_info.name}
           </Link>
