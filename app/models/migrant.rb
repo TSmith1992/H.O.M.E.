@@ -6,6 +6,6 @@ class Migrant < ApplicationRecord
     has_one :unit
     has_secure_password
 
-    validates :name, :description, :birthdate, :origin_country, :picture, presence: true
+    validates :password, :password_confirmation, :name, :description, :birthdate, :origin_country, :picture, presence: true
 
 end

@@ -1,5 +1,6 @@
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 import Homepage from "./Homepage";
+import ProfileEdit from "./ProfileEdit";
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory();
@@ -36,12 +37,13 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <Route exact path="/homepage">
           <Homepage currentUser={currentUser} />
         </Route>
-        {/* <Route exact path="/profileedit">
+        <Route exact path="/profileedit">
           <ProfileEdit
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
           />
         </Route>
+        {/* 
         <Route exact path="/pastappt">
           <PastAppointmentTree currentUser={currentUser} />
         </Route>
