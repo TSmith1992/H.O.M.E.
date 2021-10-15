@@ -5,7 +5,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
-  const [toContinue, setToContinue] = useState(false);
 
   useEffect(() => {
     fetch("/me", {
@@ -32,12 +31,6 @@ function App() {
   }
   return (
     <div className="App">
-      {!toContinue?
-      <><span>Remember: 
-        <br></br> 
-        We hold these truths to be self-evident, that all men are created equal, that they are endowed by their creator with certain unalienable rights, that among these are life, liberty and the pursuit of happiness.</span>
-        <br></br>
-        <button onClick={() => setToContinue(true)}>Continue</button></>:
      <Router>
       {currentUser ? (
         <AuthenticatedApp
@@ -47,7 +40,7 @@ function App() {
       ) : (
         <LoginTree setCurrentUser={setCurrentUser} />
       )}
-    </Router>}
+    </Router>
     </div>
   );
 }

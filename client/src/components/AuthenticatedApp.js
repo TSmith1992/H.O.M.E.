@@ -23,14 +23,10 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <span className="spanNLinks">
           <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
           <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile!</button></NavLink>
-          <NavLink to="/pastappt"><button className='NavLinks'>Past Appointments</button></NavLink>
-          <NavLink to="/pendappt"><button className='NavLinks'>Pending Appointments</button></NavLink>
-          {currentUser.hairstyle_pic ? (
-            <NavLink to="/bookappt"><button className='NavLinks'>Book an Appointment</button></NavLink>
-          ) : (
-            <></>
-          )}
-        </span>
+          <NavLink to="/reviews"><button className='NavLinks'>Write Reviews</button></NavLink>
+          <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>
+          <NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>
+        </span><br></br><p></p>
         <span className="spanLogout">
           Logged in as...<strong>{currentUser.name}</strong><p></p>
           <button className='logout' onClick={handleLogout}>Logout</button>
