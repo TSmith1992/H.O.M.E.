@@ -22,8 +22,8 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       <nav className='topNav'>
         <span className="spanNLinks">
           <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
-          <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile!</button></NavLink>
-          <NavLink to="/reviews"><button className='NavLinks'>Write Reviews</button></NavLink>
+          <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile</button></NavLink>
+          <NavLink to="/reviews"><button className='NavLinks'>Write/Read Reviews</button></NavLink>
           <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>
           <NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>
         </span><br></br><p></p>
