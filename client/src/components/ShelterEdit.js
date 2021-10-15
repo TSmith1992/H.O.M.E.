@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom"
 
 export default function ShelterEdit({shelter}) {
+    const history = useHistory();
     const [name, setName] = useState("");
     const [picture, setPicture] = useState("");
     const [description, setDescription] = useState("");
@@ -34,7 +36,7 @@ export default function ShelterEdit({shelter}) {
       }).then((res) => {
         if (res.ok) {
           res.json().then((user) => {
-              window.location.reload()
+              history.push('/homepage')
             });
             alert("Your shelter has been updated with new information!")
         } else {

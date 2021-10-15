@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom"
 import ShelterEdit from './ShelterEdit'
 
 export default function LProfileEdit({currentUser, setCurrentUser}) {
+    const history = useHistory();
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [picture, setPicture] = useState("");
@@ -39,7 +41,7 @@ export default function LProfileEdit({currentUser, setCurrentUser}) {
         if (res.ok) {
           res.json().then((user) => {
             setCurrentUser(user);
-            window.location.reload()
+            history.push('/homepage')
         });
         alert('Success!')
         } else {

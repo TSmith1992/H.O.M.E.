@@ -41,7 +41,6 @@ export default function MProfileEdit({currentUser, setCurrentUser}) {
         if (res.ok) {
           res.json().then((user) => {
             setCurrentUser(user);
-            // window.location.reload()
             history.push('/homepage')
         });
         alert('Success!')
