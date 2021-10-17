@@ -2,6 +2,10 @@
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 import Homepage from "./Homepage";
 import ProfileEdit from "./ProfileEdit";
+import Reviews from "./Reviews";
+import Move from "./Move";
+import React, {useState, useEffect} from "react"
+
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory();
@@ -17,6 +21,17 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       }
     });
   };
+
+  const [shelters, setShelters] = useState('')
+
+  useEffect(() => {
+      fetch(`/shelters`)
+        .then((r) => r.json())
+        .then((r) => {
+          setShelters(r);
+          
+        });
+    }, [shelters]);
 
   console.log('Current User,   ', currentUser)
   return (
@@ -44,13 +59,14 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+        <Route exact path="/reviews">
+          <Reviews currentUser={currentUser} />
+        </Route>
+        <Route exact path="/sheltermove">
+          <Move currentUser={currentUser} shelters={shelters} />
+        </Route>
         {/* 
-        <Route exact path="/pastappt">
-          <PastAppointmentTree currentUser={currentUser} />
-        </Route>
-        <Route exact path="/pendappt">
-          <PendingAppointments currentUser={currentUser} />
-        </Route>
+
         <Route exact path="/bookappt">
           <BookAppointment currentUser={currentUser} />
         </Route> */}
