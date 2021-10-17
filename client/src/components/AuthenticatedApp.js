@@ -23,6 +23,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
   };
 
   const [shelters, setShelters] = useState('')
+  const [chosenMove, setChosenMove] = useState(false)
 
   useEffect(() => {
       fetch(`/shelters`)
@@ -42,7 +43,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile</button></NavLink>
           <NavLink to="/reviews"><button className='NavLinks'>Write/Read Reviews</button></NavLink>
           <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>
-          <NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>
+          {chosenMove?<></>:<NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>}
         </span><br></br><p></p>
         <span className="spanLogout">
           Logged in as...<strong>{currentUser.name}</strong><p></p>
@@ -63,7 +64,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           <Reviews currentUser={currentUser} />
         </Route>
         <Route exact path="/sheltermove">
-          <Move currentUser={currentUser} shelters={shelters} />
+          <Move currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />
         </Route>
         {/* 
 

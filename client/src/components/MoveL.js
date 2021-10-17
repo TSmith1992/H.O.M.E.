@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function MoveL(currentUser) {
+export default function MoveL({currentUser}) {
+    console.log('testing,', currentUser.migrant_shelters)
     return (
         <div>
-            I'm the Lead page
+            {currentUser.migrant_shelters.map(request =>{
+                <div key={request.id}>
+                    {request.id}
+                </div>
+            })}
         </div>
     )
 }
