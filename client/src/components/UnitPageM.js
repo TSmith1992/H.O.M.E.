@@ -3,11 +3,11 @@ import { useHistory } from "react-router";
 
 export default function UnitPageM({ currentUser }) {
   const history = useHistory();
-  const [unitLead, setUnitLead] = useState("");
-  const [personA, setPersonA] = useState("");
-  const [personB, setPersonB] = useState("");
-  const [personC, setPersonC] = useState("");
-  const [errors, setErrors] = useState("");
+  const [unitLead, setUnitLead] = useState();
+  const [personA, setPersonA] = useState();
+  const [personB, setPersonB] = useState();
+  const [personC, setPersonC] = useState();
+  const [errors, setErrors] = useState();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,15 +17,15 @@ export default function UnitPageM({ currentUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        migrant_id: unitLead,
-        person_A: personA,
-        person_B: personB,
-        person_C: personC
+        migrant_id: currentUser.id,
+        person_A: parseInt(personA),
+        person_B: parseInt(personB),
+        person_C: parseInt(personC)
       }),
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          history.push('/homepage')
+          window.location.reload()
       });
       alert('Success!')
       } else {
@@ -40,9 +40,8 @@ export default function UnitPageM({ currentUser }) {
   return (
     <div>
       On this page, you can create or disband a unit group. Only unit leaders
-      may disband a unit. You may only form a unit of four(4) members, and all
-      members must live in the same shelter. Remember: Being in a unit means you
-      CANNOT be oved to a new shelter.
+      may disband a unit. You may only form a unit of four(4) members. Remember: Being in a unit means you
+      CANNOT be moved to a new shelter.
       <form onSubmit={handleSubmit}>
         <br></br>
         <p>

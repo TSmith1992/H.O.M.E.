@@ -43,7 +43,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
           <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile</button></NavLink>
           <NavLink to="/reviews"><button className='NavLinks'>Write/Read Reviews</button></NavLink>
-          <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>
+          {currentUser.origin_country? <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>:<></>}
           {chosenMove?<></>:<NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>}
         </span><br></br><p></p>
         <span className="spanLogout">

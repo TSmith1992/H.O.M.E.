@@ -12,7 +12,12 @@ class UnitsController < ApplicationController
     end
 
     def create
-        unit = Unit.create!(unit_params)
+        unit = Unit.create!(unit_params) 
+        Migrant.update(id: params[:migrant_id], unit_leader: true, unit_member: true)
+        Migrant.update(id: params[:person_A], unit_leader: false, unit_member: true)
+        Migrant.update(id: params[:person_B], unit_leader: false, unit_member: true)
+        Migrant.update(id: params[:person_C], unit_leader: false, unit_member: true)
+        byebug
         render json: unit, status: :created
     end
 
@@ -24,6 +29,10 @@ class UnitsController < ApplicationController
 
     def destroy 
         unit= find_unit
+        Migrant.update(id: params[:migrant_id], unit_leader:false, unit_member:false)
+        Migrant.update(id: params[:person_A], unit_leader:false, unit_member:false)
+        Migrant.update(id: params[:person_B], unit_leader:false, unit_member:false)
+        Migrant.update(id: params[:person_C], unit_leader:false, unit_member:false)
         unit.destroy
         head :no_content
     end
