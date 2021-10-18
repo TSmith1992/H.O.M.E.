@@ -19,8 +19,16 @@ class MigrantSheltersController < ApplicationController
     def update
         migrantShelter = find_migrantShelter
         migrantShelter.update!(migrantShelter_params)
+        migrantShelter.migrant.migrant_shelters.slice(0...migrantShelter.migrant.migrant_shelters.length-1).each{|shelter| shelter.destroy}
         render json: migrantShelter, status: :ok
     end
+
+    def destroy
+        migrantShelter = find_migrantShelter
+        migrantShelter.destroy
+        head :no_content
+    end
+
 
     private
 

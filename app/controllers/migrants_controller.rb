@@ -22,6 +22,11 @@ class MigrantsController < ApplicationController
 
     def create
         migrant = Migrant.create!(migrant_params)
+        MigrantShelter.create(
+            migrant_id: migrant.id,
+            shelter_id: 5,
+            active: true
+        )
         render json: migrant, status: :created
     end
 

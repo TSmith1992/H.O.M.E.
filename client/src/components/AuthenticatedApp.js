@@ -66,11 +66,6 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <Route exact path="/sheltermove">
           <Move currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />
         </Route>
-        {/* 
-
-        <Route exact path="/bookappt">
-          <BookAppointment currentUser={currentUser} />
-        </Route> */}
       </Switch>
     </div>
   );

@@ -37,6 +37,7 @@ export default function ShelterMoveCard({ currentUser, shelter, setChosenMove })
   return (
     <div key={shelter.id}>
       <h1>{shelter.name}</h1>
+      <h2><strong>Lead:</strong> {shelter.lead.name}</h2>
       <img src={shelter.picture} alt="shelter" width="300px" height="300px" />
       <p>Address:</p>
       <h2>
