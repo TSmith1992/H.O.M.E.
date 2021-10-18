@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :migrant_shelters
   resources :migrant_lead_reviews
   resources :shelters
-  resources :units
+  resources :units, only: [:show, :index, :create, :update, :destroy]
   resources :migrants
   resources :leads
 

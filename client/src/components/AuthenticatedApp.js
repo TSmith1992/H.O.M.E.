@@ -4,6 +4,7 @@ import Homepage from "./Homepage";
 import ProfileEdit from "./ProfileEdit";
 import Reviews from "./Reviews";
 import Move from "./Move";
+import UnitPage from "./UnitPage";
 import React, {useState, useEffect} from "react"
 
 
@@ -62,6 +63,9 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         </Route>
         <Route exact path="/reviews">
           <Reviews currentUser={currentUser} />
+        </Route>
+        <Route exact path="/unitedit">
+          <UnitPage currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />
         </Route>
         <Route exact path="/sheltermove">
           <Move currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />

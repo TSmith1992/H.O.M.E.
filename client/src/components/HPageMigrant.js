@@ -24,6 +24,7 @@ export default function HPageMigrant({ currentUser }) {
         <h3>{currentUser.origin_country}</h3>
         <p>Birthdate:</p>
         <h3>{currentUser.birthdate}</h3>
+        <p>Unit Code ID:</p><h3>{currentUser.id}</h3>
         <h3>
           {currentUser.unit_member ? (
             <>You are currently part of a migrant unit </>

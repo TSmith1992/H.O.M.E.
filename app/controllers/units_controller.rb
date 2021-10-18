@@ -18,7 +18,7 @@ class UnitsController < ApplicationController
 
     def update
         unit = find_unit
-        Unit.update!(unit_params)
+        unit.update!(unit_params)
         render json: unit, status: :ok
     end
 
@@ -35,7 +35,7 @@ class UnitsController < ApplicationController
     end
 
     def unit_params
-        params.permit(:migrant_id, :person_A, :person_B, :person_C,)
+        params.permit(:migrant_id, :person_A, :person_B, :person_C)
     end
 
     def render_not_found_response
