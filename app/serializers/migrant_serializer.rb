@@ -1,5 +1,5 @@
 class MigrantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :birthdate, :gender, :origin_country, :unit_member, :unit_leader, :unit_id, :description, :picture, :processed, :lead_info
+  attributes :id, :name, :birthdate, :gender, :origin_country, :unit_member, :unit_leader, :unit_id, :description, :picture, :processed, :lead_info, :shelter_check
 
   has_many :migrant_lead_reviews
   has_many :migrant_shelters
