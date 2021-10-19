@@ -23,7 +23,7 @@ export default function UnitPageInUnit({ currentUser}) {
         setPersonC(data);
         console.log("Person C,", personC);
       });
-  }, []);
+  },[]);
 
   function deleteUnit(e) {
     e.preventDefault();
