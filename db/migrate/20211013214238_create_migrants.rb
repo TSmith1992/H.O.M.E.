@@ -5,9 +5,9 @@ class CreateMigrants < ActiveRecord::Migration[6.1]
       t.date :birthdate
       t.string :gender
       t.string :origin_country
-      t.boolean :unit_member
-      t.boolean :unit_leader
-      t.integer :unit_id
+      t.boolean :unit_member, optional: true
+      t.boolean :unit_leader, optional: true
+      t.integer :unit_id, optional: true
       t.text :description
       t.string :picture
       t.boolean :processed

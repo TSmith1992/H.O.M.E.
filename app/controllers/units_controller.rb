@@ -12,7 +12,8 @@ class UnitsController < ApplicationController
     end
 
     def create
-        unit = Unit.create!(unit_params) 
+        unit = Unit.create!(unit_params)
+        byebug 
         Migrant.update(id: params[:migrant_id], unit_leader: true, unit_member: true)
         Migrant.update(id: params[:person_A], unit_leader: false, unit_member: true)
         Migrant.update(id: params[:person_B], unit_leader: false, unit_member: true)
@@ -44,7 +45,7 @@ class UnitsController < ApplicationController
     end
 
     def unit_params
-        params.permit(:migrant_id, :person_A, :person_B, :person_C)
+        params.permit(:migrant_id, :person_A, :person_B, :person_C, :unit)
     end
 
     def render_not_found_response

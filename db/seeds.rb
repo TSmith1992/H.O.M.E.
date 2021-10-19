@@ -8,13 +8,14 @@
 
 puts "...Seeding Migrants"
 
-600.times do
+100.times do
     Migrant.create(
         name: Faker::Name.name,
         password:"123", 
         birthdate: Faker::Date.between(from: '1960-01-01', to: '2021-10-01'),
         gender: Faker::Gender.binary_type,
         origin_country: Faker::Address.country,
+        password_confirmation: "123",
         unit_leader: false,
         unit_member: false,
         unit_id: nil,
@@ -25,6 +26,7 @@ puts "...Seeding Migrants"
 end
 
 puts "... DONE Seeding Migrants"
+# byebug
 
 # # ###=======###
 
@@ -51,7 +53,7 @@ puts "...Seeding Shelters"
         lead_id: rand(5..8),
         address: Faker::Address.street_address,
         state: ["AZ", "CA", "TX", "NM"].sample,
-        name:Faker::Movies::VForVendetta.character
+        name:Faker::Movies::VForVendetta.character,
         review_score: rand(1..5),
         description: Faker::Quote.yoda,
         picture: "https://static.wixstatic.com/media/da8ae0_ff6eac56d9924bf3844a531db2b9767a.jpg/v1/fill/w_454,h_292,al_c,lg_1,q_80,usm_2.00_1.00_0.00/da8ae0_ff6eac56d9924bf3844a531db2b9767a.webp",
@@ -70,7 +72,7 @@ puts "... DONE Seeding Units"
 
 puts "...Seeding MigrantLeadReviews"
 
-400.times do
+20.times do
     MigrantLeadReview.create(
         migrant_id: rand(1..600),
         lead_id: rand(5..8),
@@ -84,7 +86,7 @@ puts "... DONE Seeding MigrantLeadReviews"
 
 puts "...Seeding MigrantShelter"
 
-600.times do
+100.times do
     MigrantShelter.create(
         migrant_id: rand(1..600),
         shelter_id: rand(1..10),
@@ -98,7 +100,7 @@ puts "... DONE Seeding MigrantShelter"
 
 puts "...Seeding MigrantShelterReview"
 
-300.times do
+20.times do
     MigrantShelterReview.create(
         migrant_id: rand(1..600),
         shelter_id: rand(1..10),

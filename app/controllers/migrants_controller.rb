@@ -43,7 +43,7 @@ class MigrantsController < ApplicationController
     end
 
     def migrant_params
-        params.permit(:name, :password, :password_confirmation, :shelter_check, :picture, :gender, :description, :origin_country, :unit_member, :unit_leader, :processed, :birthdate, :lead_info)
+        params.permit(:name, :password, :password_confirmation, :shelter_check, :picture, :gender, :description, :origin_country, :unit_member, :unit_leader, :processed, :birthdate, :lead_info, :unit)
     end
 
     def render_not_found_response

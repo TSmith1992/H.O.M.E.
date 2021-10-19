@@ -27,7 +27,7 @@ export default function UnitPageM({ currentUser }) {
         res.json().then((user) => {
           window.location.reload()
       });
-      alert('Success!')
+      alert('Success! You are now leader of a unit!')
       } else {
         res.json().then((errors) => {
           console.log(errors);
