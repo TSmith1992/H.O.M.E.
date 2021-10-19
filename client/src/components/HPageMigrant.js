@@ -40,7 +40,7 @@ export default function HPageMigrant({ currentUser }) {
         </button>
       </div>
       <div>
-        <h1>Shelter Information:</h1>
+        <h1>Shelter:</h1>
         <img
           src={currentUser.shelters[0].picture}
           alt="Shelter"
@@ -61,7 +61,7 @@ export default function HPageMigrant({ currentUser }) {
         </button>
       </div>
       <div>
-        <h1>Shelter Lead Information:</h1>
+        <h1>Shelter Lead:</h1>
         <img
           src={currentUser.lead_info.picture}
           alt="Shelter Lead"
@@ -69,8 +69,6 @@ export default function HPageMigrant({ currentUser }) {
           height="300px"
         />
         <h2>{currentUser.lead_info.name}</h2>
-        <p>Description:</p>
-        <h2>{currentUser.lead_info.description}</h2>
         <button>
           <Link to="/reviews" class="Links">
             Read more about {currentUser.lead_info.name}

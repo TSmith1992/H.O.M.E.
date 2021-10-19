@@ -28,10 +28,10 @@ class UnitsController < ApplicationController
 
     def destroy 
         unit= find_unit
-        Migrant.find(params[:migrant_id]).update(unit_leader: false, unit_member: false)
-        Migrant.find(params[:person_A]).update( unit_leader: false, unit_member: false)
-        Migrant.find(params[:person_B]).update( unit_leader: false, unit_member: false)
-        Migrant.find(params[:person_C]).update( unit_leader: false, unit_member: false)
+        Migrant.find(unit.migrant_id).update(unit_leader: false, unit_member: false)
+        Migrant.find(unit.person_A).update( unit_leader: false, unit_member: false)
+        Migrant.find(unit.person_B).update( unit_leader: false, unit_member: false)
+        Migrant.find(unit.person_C).update( unit_leader: false, unit_member: false)
         unit.destroy
         head :no_content
     end
