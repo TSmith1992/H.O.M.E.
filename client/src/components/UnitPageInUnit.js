@@ -1,7 +1,29 @@
 import React, { useState, useEffect } from "react";
 
-export default function UnitPageInUnit({ currentUser, personA, personB, personC}) {
+export default function UnitPageInUnit({ currentUser}) {
   const [deleteCon, setDeleteCon] = useState(false);
+  const [personA, setPersonA] = useState({});
+  const [personB, setPersonB] = useState({});
+  const [personC, setPersonC] = useState({});
+
+  useEffect(() => {
+    fetch(`/migrants/${currentUser.unit.person_A}`)
+      .then((r) => r.json())
+      .then((data) => {
+        setPersonA(data);
+      });
+    fetch(`/migrants/${currentUser.unit.person_B}`)
+      .then((r) => r.json())
+      .then((data) => {
+        setPersonB(data);
+      });
+    fetch(`/migrants/${currentUser.unit.person_C}`)
+      .then((r) => r.json())
+      .then((data) => {
+        setPersonC(data);
+        console.log("Person C,", personC);
+      });
+  }, []);
 
   function deleteUnit(e) {
     e.preventDefault();

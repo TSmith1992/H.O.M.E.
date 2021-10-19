@@ -1,14 +1,11 @@
 import React from "react";
 import UnitPageInUnit from "./UnitPageInUnit";
 
-export default function UnitPageTree({ currentUser, personA, personB, personC}) {
+export default function UnitPageTree({ currentUser}) {
   return (
     <div>
       {currentUser.unit_leader ? (
         <UnitPageInUnit
-          personA={personA}
-          personB={personB}
-          personC={personC}
           currentUser={currentUser}
         />
       ) : (
