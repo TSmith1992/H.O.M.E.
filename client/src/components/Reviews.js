@@ -10,13 +10,11 @@ export default function Reviews({currentUser}) {
         .then((r) => r.json())
         .then((data) => {
             setReviews(data);
-            console.log('data!,' , data)
         });
         fetch("/migrant_shelter_reviews")
         .then((r) => r.json())
         .then((data) => {
           setReviewsS(data);
-            console.log('Sdata!,' , data)
         });
     }, []);
     return (

@@ -8,7 +8,6 @@ export default function ShelterEdit({shelter}) {
     const [description, setDescription] = useState("");
     const [errors, setErrors] = useState("");
 
-    console.log('shelter, ', shelter)
     
     function keepCurrent(e) {
       alert(`This shelter will keep its ${e.target.name}!`);
