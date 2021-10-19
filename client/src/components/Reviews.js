@@ -22,7 +22,7 @@ export default function Reviews({currentUser}) {
     return (
         <div>
             {currentUser.origin_country? <ReviewM currentUser={currentUser} reviews={reviews} reviewsS={reviewsS}/> 
-            : <ReviewL currentUser={currentUser} />}
+            : <ReviewL currentUser={currentUser} reviewsS={reviewsS} />}
         </div>
     )
 }
