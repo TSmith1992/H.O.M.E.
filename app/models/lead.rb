@@ -7,4 +7,15 @@ class Lead < ApplicationRecord
     has_secure_password
 
     validates :name, :description, :picture, presence: true
+
+    def avg_rating_lead
+        lead = self
+        if lead.migrant_lead_reviews.length<1
+          avg_rating = 5
+        else
+          lead_rating_sum = lead.migrant_lead_reviews.map{|review| review.score}.sum
+          lead_rating_length = lead.migrant_lead_reviews.map{|review| review.score}.length
+          lead_rating_sum/lead_rating_length
+        end
+      end
 end

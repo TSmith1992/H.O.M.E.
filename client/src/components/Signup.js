@@ -9,10 +9,10 @@ function Signup({ setCurrentUser, currentUser }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [picture, setPicture] = useState("");
-  const [gender, setGender] = useState("");
+  const [gender, setGender] = useState("male");
   const [birthdate, setBirthDate] = useState();
   const [description, setDescription] = useState("");
-  const [originCountry, setOriginCountry] = useState("")
+  const [originCountry, setOriginCountry] = useState("Afghanistan")
   const [errors, setErrors] = useState("");
   countries.registerLocale(enLocale)
   const countryObj = countries.getNames("en", { select: "official" });

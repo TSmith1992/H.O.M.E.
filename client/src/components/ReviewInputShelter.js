@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useHistory } from "react-router";
 
-export default function ReviewInput({currentUser}) {
+export default function ReviewInputShelter({currentUser}) {
     const history = useHistory();
     const [score, setScore] = useState()
     const [review, setReview] = useState('')
@@ -9,14 +9,14 @@ export default function ReviewInput({currentUser}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`migrant_lead_reviews`, {
+        fetch(`migrant_shelter_reviews`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
               migrant_id: currentUser.id,
-              lead_id: currentUser.lead_info.id,
+              shelter_id: currentUser.shelters[0].id,
               score,
               review
           }),
@@ -63,6 +63,7 @@ export default function ReviewInput({currentUser}) {
               onChange={(e) => setReview(e.target.value)}
             />
           </p>
+
           <p>
             {errors ? (
               <>
