@@ -1,14 +1,20 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
-export default function LeadReviews({currentUser, reviews}) {
-    return (
-        <div>
-            {reviews.filter(review => review.lead.id === currentUser.lead_info.id).map(lReview =>(
-                <div key={lReview.id}><h1>ANONYMOUS:</h1>
-                <strong>Review Score: </strong>{lReview.score}<br></br>
-                <strong>Review: </strong>{lReview.review}
-                </div>
-            ))}
-        </div>
-    )
+export default function LeadReviews({ currentUser, reviews }) {
+  return (
+    <div>
+      {reviews
+        .filter((review) => review.lead.id === currentUser.lead_info.id)
+        .map((lReview) => (
+          <div key={lReview.id}>
+            <h1>ANONYMOUS:</h1>
+            <strong>Review Score: </strong>
+            {lReview.score}
+            <br></br>
+            <strong>Review: </strong>
+            {lReview.review}
+          </div>
+        ))}
+    </div>
+  );
 }

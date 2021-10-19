@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import countries from 'i18n-iso-countries'
-import enLocale from 'i18n-iso-countries/langs/en.json'
+import countries from "i18n-iso-countries";
+import enLocale from "i18n-iso-countries/langs/en.json";
 
 function Signup({ setCurrentUser, currentUser }) {
   const history = useHistory();
@@ -12,14 +12,14 @@ function Signup({ setCurrentUser, currentUser }) {
   const [gender, setGender] = useState("male");
   const [birthdate, setBirthDate] = useState();
   const [description, setDescription] = useState("");
-  const [originCountry, setOriginCountry] = useState("Afghanistan")
+  const [originCountry, setOriginCountry] = useState("Afghanistan");
   const [errors, setErrors] = useState("");
-  countries.registerLocale(enLocale)
+  countries.registerLocale(enLocale);
   const countryObj = countries.getNames("en", { select: "official" });
   const countryArr = Object.entries(countryObj).map(([key, value]) => {
     return {
       label: value,
-      value: key
+      value: key,
     };
   });
 
@@ -38,13 +38,13 @@ function Signup({ setCurrentUser, currentUser }) {
         picture: picture,
         description,
         birthdate: birthdate,
-        origin_country: originCountry
+        origin_country: originCountry,
       }),
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
           setCurrentUser(user);
-          history.push('/homepage')
+          history.push("/homepage");
         });
       } else {
         res.json().then((errors) => {
@@ -54,9 +54,6 @@ function Signup({ setCurrentUser, currentUser }) {
       }
     });
   }
-
-
-
 
   return (
     <div className="authForm">
@@ -116,9 +113,8 @@ function Signup({ setCurrentUser, currentUser }) {
           <option value="Non-Binary">Non-Binary</option>
         </select>
         <p>
-          <label htmlFor="birthdate">
-            When were you born?
-          </label><br></br>
+          <label htmlFor="birthdate">When were you born?</label>
+          <br></br>
           <input
             type="date"
             name="birthdate"
@@ -126,23 +122,22 @@ function Signup({ setCurrentUser, currentUser }) {
             onChange={(e) => setBirthDate(e.target.value)}
           />
         </p>
-        <label htmlFor="origin_country">
-            Where were you born?
-          </label><br></br>
-          <select
-        style={{ width: "150px" }}
-        value={originCountry}
-        onChange={(e) => setOriginCountry(e.target.value)}
-      >
-        {!!countryArr?.length &&
-          countryArr.map(({ label, value }) => (
+        <label htmlFor="origin_country">Where were you born?</label>
+        <br></br>
+        <select
+          style={{ width: "150px" }}
+          value={originCountry}
+          onChange={(e) => setOriginCountry(e.target.value)}
+        >
+          {!!countryArr?.length &&
+            countryArr.map(({ label, value }) => (
               <option>{label}</option>
-            // <key={value} value={value}>
-            
-            //   {label}
-            // </>
-          ))}
-      </select>
+              // <key={value} value={value}>
+
+              //   {label}
+              // </>
+            ))}
+        </select>
         <p>
           <label htmlFor="description">
             What would you like for us to know about you?
@@ -160,7 +155,7 @@ function Signup({ setCurrentUser, currentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li style={{color: "red"}}>{error}</li>
+                  <li style={{ color: "red" }}>{error}</li>
                 </strong>
               ))}
             </>
@@ -169,12 +164,16 @@ function Signup({ setCurrentUser, currentUser }) {
           )}
         </p>
         <p>
-          <button type="submit" className="login">Sign Up</button>
+          <button type="submit" className="login">
+            Sign Up
+          </button>
         </p>
         <p>-- or --</p>
         <button className="login">
-          <Link to="/login" class='Links'>Log In</Link>
-          </button>
+          <Link to="/login" class="Links">
+            Log In
+          </Link>
+        </button>
       </form>
     </div>
   );

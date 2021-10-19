@@ -20,14 +20,14 @@ export default function UnitPageM({ currentUser }) {
         migrant_id: currentUser.id,
         person_A: parseInt(personA),
         person_B: parseInt(personB),
-        person_C: parseInt(personC)
+        person_C: parseInt(personC),
       }),
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          window.location.reload()
-      });
-      alert('Success! You are now leader of a unit!')
+          window.location.reload();
+        });
+        alert("Success! You are now leader of a unit!");
       } else {
         res.json().then((errors) => {
           console.log(errors);
@@ -40,12 +40,14 @@ export default function UnitPageM({ currentUser }) {
   return (
     <div>
       On this page, you can create or disband a unit group. Only unit leaders
-      may disband a unit. You may only form a unit of four(4) members. Remember: Being in a unit means you
-      CANNOT be moved to a new shelter.
+      may disband a unit. You may only form a unit of four(4) members. Remember:
+      Being in a unit means you CANNOT be moved to a new shelter.
       <form onSubmit={handleSubmit}>
         <br></br>
         <p>
-          <label htmlFor="unitLead">Your Unit ID is below. As Unit lead, you may disband a created unit:</label>
+          <label htmlFor="unitLead">
+            Your Unit ID is below. As Unit lead, you may disband a created unit:
+          </label>
           <br></br>
           <input
             type="unitLead"
@@ -73,7 +75,9 @@ export default function UnitPageM({ currentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="personB">Write the Unit ID of the third person in your Unit:</label>
+          <label htmlFor="personB">
+            Write the Unit ID of the third person in your Unit:
+          </label>
           <br></br>
           <input
             type="personB"
@@ -84,7 +88,7 @@ export default function UnitPageM({ currentUser }) {
         </p>
         <p>
           <label htmlFor="personC">
-          Write the Unit ID of the fourth person in your Unit:
+            Write the Unit ID of the fourth person in your Unit:
           </label>
           <br></br>
           <input

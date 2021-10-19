@@ -1,12 +1,10 @@
-
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 import Homepage from "./Homepage";
 import ProfileEdit from "./ProfileEdit";
 import Reviews from "./Reviews";
 import Move from "./Move";
 import UnitPage from "./UnitPage";
-import React, {useState, useEffect} from "react"
-
+import React, { useState, useEffect } from "react";
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
   const history = useHistory();
@@ -23,32 +21,54 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
     });
   };
 
-  const [shelters, setShelters] = useState('')
-  const [chosenMove, setChosenMove] = useState(false)
+  const [shelters, setShelters] = useState("");
+  const [chosenMove, setChosenMove] = useState(false);
 
   useEffect(() => {
-      fetch(`/shelters`)
-        .then((r) => r.json())
-        .then((r) => {
-          setShelters(r);
-          
-        });
-    }, [shelters]);
+    fetch(`/shelters`)
+      .then((r) => r.json())
+      .then((r) => {
+        setShelters(r);
+      });
+  }, [shelters]);
 
-  console.log('Current User,   ', currentUser)
+  console.log("Current User,   ", currentUser);
   return (
     <div className="App">
-      <nav className='topNav'>
+      <nav className="topNav">
         <span className="spanNLinks">
-          <NavLink to="/homepage"><button className='NavLinks'>HomePage</button></NavLink>
-          <NavLink to="/profileedit"><button className='NavLinks'>Edit Your Profile</button></NavLink>
-          <NavLink to="/reviews"><button className='NavLinks'>Write/Read Reviews</button></NavLink>
-          {currentUser.origin_country? <NavLink to="/unitedit"><button className='NavLinks'>Create Units</button></NavLink>:<></>}
-          {chosenMove?<></>:<NavLink to="/sheltermove"><button className='NavLinks'>Move Request(s)</button></NavLink>}
-        </span><br></br><p></p>
+          <NavLink to="/homepage">
+            <button className="NavLinks">HomePage</button>
+          </NavLink>
+          <NavLink to="/profileedit">
+            <button className="NavLinks">Edit Your Profile</button>
+          </NavLink>
+          <NavLink to="/reviews">
+            <button className="NavLinks">Write/Read Reviews</button>
+          </NavLink>
+          {currentUser.origin_country ? (
+            <NavLink to="/unitedit">
+              <button className="NavLinks">Create Units</button>
+            </NavLink>
+          ) : (
+            <></>
+          )}
+          {chosenMove ? (
+            <></>
+          ) : (
+            <NavLink to="/sheltermove">
+              <button className="NavLinks">Move Request(s)</button>
+            </NavLink>
+          )}
+        </span>
+        <br></br>
+        <p></p>
         <span className="spanLogout">
-          Logged in as...<strong>{currentUser.name}</strong><p></p>
-          <button className='logout' onClick={handleLogout}>Logout</button>
+          Logged in as...<strong>{currentUser.name}</strong>
+          <p></p>
+          <button className="logout" onClick={handleLogout}>
+            Logout
+          </button>
         </span>
       </nav>
       <Switch>
@@ -65,10 +85,18 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           <Reviews currentUser={currentUser} />
         </Route>
         <Route exact path="/unitedit">
-          <UnitPage currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />
+          <UnitPage
+            currentUser={currentUser}
+            shelters={shelters}
+            setChosenMove={setChosenMove}
+          />
         </Route>
         <Route exact path="/sheltermove">
-          <Move currentUser={currentUser} shelters={shelters} setChosenMove={setChosenMove} />
+          <Move
+            currentUser={currentUser}
+            shelters={shelters}
+            setChosenMove={setChosenMove}
+          />
         </Route>
       </Switch>
     </div>

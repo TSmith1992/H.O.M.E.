@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from 'react-router';
+import { useHistory } from "react-router";
 
 export default function RequestCard({ currentUser, request }) {
-    const history = useHistory();
+  const history = useHistory();
 
-    function AcceptedMove(e) {
-        e.preventDefault();
-        fetch(`/migrant_shelters/${request.id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-              active: true,
-          }),
-        }).then((res) => {
-          if (res.ok) {
-            res.json().then((user) => {
-              history.push('/homepage')
-          });
-          alert('Success!')
-          } else {
-            res.json().then((errors) => {
-              console.log(errors);
-            });
-          }
+  function AcceptedMove(e) {
+    e.preventDefault();
+    fetch(`/migrant_shelters/${request.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        active: true,
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          history.push("/homepage");
+        });
+        alert("Success!");
+      } else {
+        res.json().then((errors) => {
+          console.log(errors);
         });
       }
+    });
+  }
   console.log("request information,", request);
   return (
     <div key={request.id}>

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function ShelterMoveCard({ currentUser, shelter, setChosenMove }) {
+export default function ShelterMoveCard({
+  currentUser,
+  shelter,
+  setChosenMove,
+}) {
   const history = useHistory();
-  
 
   function RequestChange(e) {
-    if ((currentUser.shelters[0].id === shelter.id)) {
+    if (currentUser.shelters[0].id === shelter.id) {
       alert(
         "Hmmm...Something isn't right. Make sure you don't already live in that shelter, or that you haven't already requested a move."
       );
@@ -28,7 +31,7 @@ export default function ShelterMoveCard({ currentUser, shelter, setChosenMove })
             `Thanks! We'll let the lead know, and if accepted, you will be moved to ${shelter.name}.`
           );
           history.push("/homepage");
-          setChosenMove(true)
+          setChosenMove(true);
         });
       });
     }
@@ -37,7 +40,9 @@ export default function ShelterMoveCard({ currentUser, shelter, setChosenMove })
   return (
     <div key={shelter.id}>
       <h1>{shelter.name}</h1>
-      <h2><strong>Lead:</strong> {shelter.lead.name}</h2>
+      <h2>
+        <strong>Lead:</strong> {shelter.lead.name}
+      </h2>
       <img src={shelter.picture} alt="shelter" width="300px" height="300px" />
       <p>Address:</p>
       <h2>

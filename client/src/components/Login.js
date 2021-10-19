@@ -32,7 +32,7 @@ function Login({ setCurrentUser }) {
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
         <h1>
-          Welcome{' '} 
+          Welcome{" "}
           <strong>
             <em>H.O.M.E.</em>
           </strong>

@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function HPageMigrant({ currentUser }) {
-
-
   return (
     <div>
       <h1>Hi {currentUser.name}!</h1>
@@ -24,7 +22,8 @@ export default function HPageMigrant({ currentUser }) {
         <h3>{currentUser.origin_country}</h3>
         <p>Birthdate:</p>
         <h3>{currentUser.birthdate}</h3>
-        <p>Unit Code ID:</p><h3>{currentUser.id}</h3>
+        <p>Unit Code ID:</p>
+        <h3>{currentUser.id}</h3>
         <h3>
           {currentUser.unit ? (
             <>You are currently part of a migrant unit </>

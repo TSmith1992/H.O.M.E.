@@ -1,6 +1,6 @@
 import React from "react";
-import MProfileEdit from './MProfileEdit';
-import LProfileEdit from './LProfileEdit'
+import MProfileEdit from "./MProfileEdit";
+import LProfileEdit from "./LProfileEdit";
 
 export default function ProfileEdit({ currentUser, setCurrentUser }) {
   return (
