@@ -5,12 +5,7 @@ import ReviewL from "./ReviewL";
 export default function Reviews({ currentUser }) {
   const [reviews, setReviews] = useState();
   const [reviewsS, setReviewsS] = useState();
-  //   if (r.ok){
-  //     console.log('good')
-  //   }else{
-  //     r.json().then(errors => console.log(errors))
-  //   }
-  // })},[])
+
   useEffect(() => {
     fetch("/migrant_lead_reviews")
       .then((r) => r.json())
