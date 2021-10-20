@@ -37,6 +37,7 @@ export default function RequestCard({ currentUser, request }) {
     .then(data => console.log(data));
     alert("You have rejected this move proposal. The migrant will stay in their current shelter.")
     history.push("/homepage");
+    window.location.reload();
   }
   console.log("request information,", request);
   return (
@@ -62,8 +63,6 @@ export default function RequestCard({ currentUser, request }) {
       />
       <br></br>
       <strong>Description:</strong> {request.shelter.description}
-      <br></br>
-      <strong>Review Score of Place:</strong> {request.shelter.review_score}
       <br></br>
       <strong>Capacity:</strong> {request.shelter.capacity}
       <br></br>

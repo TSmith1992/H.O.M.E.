@@ -27,6 +27,8 @@ class Migrant < ApplicationRecord
             shelter_id: Shelter.first.id,
             active: true
         )
+        elsif self.shelters.length>1
+          MigrantShelter.find(self.migrant_shelters[0].id).destroy
         else
           true
         end
