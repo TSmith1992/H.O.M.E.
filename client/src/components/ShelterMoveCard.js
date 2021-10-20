@@ -57,9 +57,16 @@ export default function ShelterMoveCard({
       <h2>
         {shelter.current_occupancy}/{shelter.capacity}
       </h2>
-      <button onClick={RequestChange}>
-        Click here to request this place to move
-      </button>
+      {shelter.current_occupancy > shelter.capacity ? (
+        <strong>
+          This shelter is currently above capacity. No new migrants may be moved
+          here.
+        </strong>
+      ) : (
+        <button onClick={RequestChange}>
+          Click here to request this place to move
+        </button>
+      )}
     </div>
   );
 }

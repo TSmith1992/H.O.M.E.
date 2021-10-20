@@ -9,7 +9,7 @@ export default function NoUnitMove({ currentUser, shelters, setChosenMove }) {
       {!shelters ? (
         <>Loading...</>
       ) : (
-        shelters.map((shelter) => (
+        shelters.filter(shelter => shelter.id !== currentUser.shelters[0].id).map((shelter) => (
           <ShelterMoveCard
             shelter={shelter}
             currentUser={currentUser}

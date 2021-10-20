@@ -19,6 +19,14 @@ export default function HPageShelter({ shelter }) {
       <h2>
         {shelter.current_occupancy}/{shelter.capacity}
       </h2>
+      {shelter.current_occupancy > shelter.capacity ? (
+        <strong>
+          This shelter is currently overpopulated. You may not accept new
+          migrants here until there is sufficient space
+        </strong>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
