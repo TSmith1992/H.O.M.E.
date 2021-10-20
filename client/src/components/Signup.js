@@ -6,8 +6,8 @@ import enLocale from "i18n-iso-countries/langs/en.json";
 function Signup({ setCurrentUser, currentUser }) {
   const history = useHistory();
   const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [password, setPassword] = useState();
+  const [passwordConfirmation, setPasswordConfirmation] = useState();
   const [picture, setPicture] = useState("");
   const [gender, setGender] = useState("male");
   const [birthdate, setBirthDate] = useState();
@@ -25,34 +25,44 @@ function Signup({ setCurrentUser, currentUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/migrants", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        password,
-        password_confirmation: passwordConfirmation,
-        gender: gender,
-        picture: picture,
-        description,
-        birthdate: birthdate,
-        origin_country: originCountry,
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        res.json().then((user) => {
-          setCurrentUser(user);
-          history.push("/homepage");
-        });
-      } else {
-        res.json().then((errors) => {
-          console.log(errors);
-          setErrors(errors);
-        });
-      }
-    });
+    if (
+      !password ||
+      !passwordConfirmation ||
+      password !== passwordConfirmation
+    ) {
+      alert(
+        "Please enter a password and make sure it is the same as your password confirmation"
+      );
+    } else {
+      fetch("/migrants", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          password,
+          password_confirmation: passwordConfirmation,
+          gender: gender,
+          picture: picture,
+          description,
+          birthdate: birthdate,
+          origin_country: originCountry,
+        }),
+      }).then((res) => {
+        if (res.ok) {
+          res.json().then((user) => {
+            setCurrentUser(user);
+            history.push("/homepage");
+          });
+        } else {
+          res.json().then((errors) => {
+            console.log(errors);
+            setErrors(errors);
+          });
+        }
+      });
+    }
   }
 
   return (
