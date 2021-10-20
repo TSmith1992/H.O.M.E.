@@ -38,7 +38,7 @@ class MigrantSheltersController < ApplicationController
     end
 
     def migrantShelter_params
-        params.permit(:migrant_id, :shelter_id, :active)
+        params.permit(:migrant_id, :shelter_id, :active, :hidden)
     end
 
     def render_not_found_response
