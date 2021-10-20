@@ -3,8 +3,14 @@ import ReviewM from "./ReviewM";
 import ReviewL from "./ReviewL";
 
 export default function Reviews({ currentUser }) {
-  const [reviews, setReviews] = useState([]);
-  const [reviewsS, setReviewsS] = useState([]);
+  const [reviews, setReviews] = useState();
+  const [reviewsS, setReviewsS] = useState();
+  //   if (r.ok){
+  //     console.log('good')
+  //   }else{
+  //     r.json().then(errors => console.log(errors))
+  //   }
+  // })},[])
   useEffect(() => {
     fetch("/migrant_lead_reviews")
       .then((r) => r.json())
@@ -15,8 +21,10 @@ export default function Reviews({ currentUser }) {
       .then((r) => r.json())
       .then((data) => {
         setReviewsS(data);
+        console.log('reviewsS', reviewsS)
       });
   }, []);
+
   return (
     <div>
       {currentUser.origin_country ? (

@@ -3,6 +3,7 @@ class MigrantLeadReviewsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     
     def index
+        # byebug
         render json: MigrantLeadReview.all
     end
 

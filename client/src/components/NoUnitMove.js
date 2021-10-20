@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import ShelterMoveCard from "./ShelterMoveCard";
 
 export default function NoUnitMove({ currentUser, shelters, setChosenMove }) {
-  console.log(shelters);
 
   return (
     <div>

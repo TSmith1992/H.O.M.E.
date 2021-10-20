@@ -3,7 +3,8 @@ import React from "react";
 export default function ShelterReviewsLead({ currentUser, reviewsS, shelter }) {
   return (
     <div>
-      {reviewsS
+      {reviewsS?<>
+        {reviewsS
         .filter((review) => review.shelter.id === shelter.id)
         .map((lReview) => (
           <div key={lReview.id}>
@@ -15,6 +16,8 @@ export default function ShelterReviewsLead({ currentUser, reviewsS, shelter }) {
             {lReview.review}
           </div>
         ))}
+      </>:<>Loading...</>}
+
     </div>
   );
 }

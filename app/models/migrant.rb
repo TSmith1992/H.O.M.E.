@@ -12,7 +12,7 @@ class Migrant < ApplicationRecord
 
     def lead_info
         if self.shelters.empty?
-          Lead.find(5)
+          Lead.first
         else
           lead = self.shelters[0].lead
         end
@@ -24,7 +24,7 @@ class Migrant < ApplicationRecord
         if self.shelters.length<1
           MigrantShelter.create(
             migrant_id: self.id,
-            shelter_id: 5,
+            shelter_id: Shelter.first.id,
             active: true
         )
         else

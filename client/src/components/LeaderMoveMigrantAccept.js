@@ -24,7 +24,13 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
       if (res.ok) {
         res.json().then((user) => {
           fetch(`/migrant_shelters${place.id}`, {
-            method: "DELETE",
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json"
+            }, 
+            body: JSON.stringify({
+              active: false
+            })
           });
           window.location.reload();
           history.push("/homepage");

@@ -31,7 +31,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
       .then((r) => {
         setShelters(r);
       });
-  }, [shelters]);
+  }, []);
 
   console.log("Current User,   ", currentUser);
   return (

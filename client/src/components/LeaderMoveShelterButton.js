@@ -11,6 +11,7 @@ export default function LeaderMoveShelterButton({ shelter, currentUser }) {
       {revealM ? (
         <>
           {currentUser.migrant_shelters
+          .filter(local => local.active)
             .filter((place) => place.shelter.name === shelter.name)
             .map((place) => (
               <div>
