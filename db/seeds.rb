@@ -30,38 +30,38 @@ puts "... DONE Seeding Migrants"
 
 # # ###=======###
 
-puts "...Seeding Leads"
+# puts "...Seeding Leads"
 
-4.times do 
-    Lead.create(
-        name: Faker::Name.name,
-        password:"123",
-        description: Faker::Quote.most_interesting_man_in_the_world,
-        picture: "https://cdn.mos.cms.futurecdn.net/sAtmV58zgo6mQ3RqfxBTrd.jpg",
-        review_score: 3   
-    )
-end
+# 4.times do 
+#     Lead.create(
+#         name: Faker::Name.name,
+#         password:"123",
+#         description: Faker::Quote.most_interesting_man_in_the_world,
+#         picture: "https://cdn.mos.cms.futurecdn.net/sAtmV58zgo6mQ3RqfxBTrd.jpg",
+#         review_score: 3   
+#     )
+# end
 
-puts "... DONE Seeding Leads"
+# puts "... DONE Seeding Leads"
 
 ###=======###
 
-puts "...Seeding Shelters"
+# puts "...Seeding Shelters"
 
-10.times do
-    Shelter.create(
-        lead_id: rand(5..8),
-        address: Faker::Address.street_address,
-        state: ["AZ", "CA", "TX", "NM"].sample,
-        name:Faker::Movies::VForVendetta.character,
-        review_score: rand(1..5),
-        description: Faker::Quote.yoda,
-        picture: "https://static.wixstatic.com/media/da8ae0_ff6eac56d9924bf3844a531db2b9767a.jpg/v1/fill/w_454,h_292,al_c,lg_1,q_80,usm_2.00_1.00_0.00/da8ae0_ff6eac56d9924bf3844a531db2b9767a.webp",
-        capacity: rand(60..120)
-    )
-end
+# 10.times do
+#     Shelter.create(
+#         lead_id: rand(5..8),
+#         address: Faker::Address.street_address,
+#         state: ["AZ", "CA", "TX", "NM"].sample,
+#         name:Faker::Movies::VForVendetta.character,
+#         review_score: rand(1..5),
+#         description: Faker::Quote.yoda,
+#         picture: "https://static.wixstatic.com/media/da8ae0_ff6eac56d9924bf3844a531db2b9767a.jpg/v1/fill/w_454,h_292,al_c,lg_1,q_80,usm_2.00_1.00_0.00/da8ae0_ff6eac56d9924bf3844a531db2b9767a.webp",
+#         capacity: rand(60..120)
+#     )
+# end
 
-puts "... DONE Seeding Shelters"
+# puts "... DONE Seeding Shelters"
 
 ###=======###
 
@@ -72,10 +72,10 @@ puts "... DONE Seeding Units"
 
 puts "...Seeding MigrantLeadReviews"
 
-20.times do
+30.times do
     MigrantLeadReview.create(
         migrant_id: rand(1..600),
-        lead_id: rand(5..8),
+        lead_id: rand(1..8),
         score: rand(1..5),
         review: Faker::TvShows::BojackHorseman.quote
     )
@@ -88,7 +88,7 @@ puts "...Seeding MigrantShelter"
 
 100.times do
     MigrantShelter.create(
-        migrant_id: rand(1..600),
+        migrant_id: rand(102..202),
         shelter_id: rand(1..10),
         active: true
     )

@@ -55,12 +55,6 @@ export default function UnitPageM({ currentUser }) {
             value={currentUser.id}
             onChange={(e) => setUnitLead(e.target.value)}
           />
-          {/* <input
-            type="checkbox"
-            name="unitLead"
-            value="unitLead"
-            onChange={keepCurrent}
-          ></input> */}
         </p>
         <p>
           <label htmlFor="personA">
@@ -99,7 +93,7 @@ export default function UnitPageM({ currentUser }) {
           />
         </p>
         <p>
-          {/* {errors ? (
+          {errors ? (
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
@@ -109,7 +103,7 @@ export default function UnitPageM({ currentUser }) {
             </>
           ) : (
             <></>
-          )} */}
+          )}
         </p>
         <button type="submit">Confirm Changes</button>
       </form>

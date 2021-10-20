@@ -25,7 +25,7 @@ export default function HPageMigrant({ currentUser }) {
         <p>Unit Code ID:</p>
         <h3>{currentUser.id}</h3>
         <h3>
-          {currentUser.unit_member ? (
+          {currentUser.unit_member || currentUser.unit ? (
             <>You are currently part of a migrant unit </>
           ) : (
             <>

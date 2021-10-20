@@ -5,6 +5,7 @@ class Unit < ApplicationRecord
   # belongs_to :person_C, :class_name => 'Migrant'
 
   validates :migrant_id, :person_A, :person_B, :person_C,  presence: true, uniqueness: true
+  validate :same_shelter
   
   # def unit_member_update
   #   Migrant.update(
@@ -30,13 +31,13 @@ class Unit < ApplicationRecord
   # end
 
 
-  # def same_shelter
-  #   # lead_shelter = Migrant.find(:migrant_id).shelters[0].id
-  #   # a_shelter = Migrant.find(:person_A).shelters[0].id
-  #   # b_shelter = Migrant.find(:person_B).shelters[0].id
-  #   # c_shelter = Migrant.find(:person_C).shelters[0].id
-  #   unless (Migrant.find(:migrant_id).shelters[0].id==Migrant.find(:person_A).shelters[0].id) && (Migrant.find(:migrant_id).shelters[0].id==Migrant.find(:person_B).shelters[0].id) && (Migrant.find(:migrant_id).shelters[0].id== Migrant.find(:person_C).shelters[0].id)
-  #     errors.add(:same_shelter, 'All members must live in the same shelter')
-  #   end
-  # end
+  def same_shelter
+    # lead_shelter = Migrant.find(:migrant_id).shelters[0].id
+    # a_shelter = Migrant.find(:person_A).shelters[0].id
+    # b_shelter = Migrant.find(:person_B).shelters[0].id
+    # c_shelter = Migrant.find(:person_C).shelters[0].id
+    unless (Migrant.find(self.migrant_id).shelters[0].id==Migrant.find(self.person_A).shelters[0].id) && (Migrant.find(self.migrant_id).shelters[0].id==Migrant.find(self.person_B).shelters[0].id) && (Migrant.find(self.migrant_id).shelters[0].id== Migrant.find(self.person_C).shelters[0].id)
+      errors.add(:same_shelter, '...All members must live in the same shelter')
+    end
+  end
 end

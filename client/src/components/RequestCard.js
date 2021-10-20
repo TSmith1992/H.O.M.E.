@@ -27,6 +27,17 @@ export default function RequestCard({ currentUser, request }) {
       }
     });
   }
+
+  function RejectMove(e){
+    e.preventDefault();
+    fetch(`/migrant_shelters/${request.id}`, {
+      method: "DELETE"
+    })
+    .then((res) => res.json())
+    .then(data => console.log(data));
+    alert("You have rejected this move proposal. The migrant will stay in their current shelter.")
+    history.push("/homepage");
+  }
   console.log("request information,", request);
   return (
     <div key={request.id}>
@@ -57,7 +68,7 @@ export default function RequestCard({ currentUser, request }) {
       <strong>Capacity:</strong> {request.shelter.capacity}
       <br></br>
       <button onClick={AcceptedMove}>Accept Move Request</button>
-      <button>Reject Move Request</button>
+      <button onClick={RejectMove}>Reject Move Request</button>
     </div>
   );
 }

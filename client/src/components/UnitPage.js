@@ -7,7 +7,7 @@ export default function UnitPage({ currentUser, shelters }) {
 
   return (
     <div>
-      {currentUser.unit_member?<UnitPageTree currentUser={currentUser} shelters={shelters}/>:
+      {currentUser.unit_member || currentUser.unit ?<UnitPageTree currentUser={currentUser} shelters={shelters}/>:
       <UnitPageM currentUser={currentUser} />}
     </div>
   );
