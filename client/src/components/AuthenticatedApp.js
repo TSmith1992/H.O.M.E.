@@ -4,6 +4,7 @@ import ProfileEdit from "./ProfileEdit";
 import Reviews from "./Reviews";
 import Move from "./Move";
 import UnitPage from "./UnitPage";
+import LeaderMove from "./LeaderMove";
 import React, { useState, useEffect } from "react";
 
 function AuthenticatedApp({ currentUser, setCurrentUser }) {
@@ -60,6 +61,13 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
               <button className="NavLinks">Move Request(s)</button>
             </NavLink>
           )}
+          {currentUser.review_score? (
+            <NavLink to="/leadermove">
+              <button className="NavLinks">Move Migrants</button>
+            </NavLink>
+          ) : (
+            <></>
+          )}
         </span>
         <br></br>
         <p></p>
@@ -96,6 +104,12 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
             currentUser={currentUser}
             shelters={shelters}
             setChosenMove={setChosenMove}
+          />
+        </Route>
+        <Route exact path="/leadermove">
+          <LeaderMove
+            currentUser={currentUser}
+            shelters={shelters}
           />
         </Route>
       </Switch>

@@ -6,6 +6,14 @@ export default function HPageShelter({ shelter }) {
     <div>
       <h1>{shelter.name}</h1>
       <img src={shelter.picture} alt="Profile" width="300px" height="300px" />
+      <br></br>{shelter.current_occupancy > shelter.capacity ? (
+        <em>
+          This shelter is currently overpopulated. You may not accept new
+          migrants here until there is sufficient space
+        </em>
+      ) : (
+        <></>
+      )}
       <p>Address:</p>
       <h2>
         {shelter.address}, {shelter.state}
@@ -19,14 +27,6 @@ export default function HPageShelter({ shelter }) {
       <h2>
         {shelter.current_occupancy}/{shelter.capacity}
       </h2>
-      {shelter.current_occupancy > shelter.capacity ? (
-        <strong>
-          This shelter is currently overpopulated. You may not accept new
-          migrants here until there is sufficient space
-        </strong>
-      ) : (
-        <></>
-      )}
     </div>
   );
 }

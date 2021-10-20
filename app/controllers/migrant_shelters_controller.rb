@@ -25,6 +25,8 @@ class MigrantSheltersController < ApplicationController
 
     def destroy
         migrantShelter = find_migrantShelter
+        byebug
+        migrantShelter.migrant.migrant_shelters.slice(0...migrantShelter.migrant.migrant_shelters.length-1).each{|shelter| shelter.destroy}
         migrantShelter.destroy
         head :no_content
     end
