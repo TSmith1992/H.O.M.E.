@@ -72,7 +72,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <br></br>
         <p></p>
         <span className="spanLogout">
-          Logged in as <img
+          Logged in as... <img
           src={currentUser.picture}
           alt="Profile"
           width="25px"

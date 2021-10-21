@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Redirect, useHistory, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button'
+// import LoginIcon from '@mui/icons-material/Login';
+import '../Styling/MyCSS.css'
 
 function Login({ setCurrentUser }) {
   const history = useHistory();
@@ -28,7 +31,7 @@ function Login({ setCurrentUser }) {
     });
   };
   return (
-    <div className="authForm">
+    <div className="authFormLogin">
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
         <h1>
@@ -38,8 +41,10 @@ function Login({ setCurrentUser }) {
           </strong>
           <p>
             <em>House of Migrants and Expats</em>
+            <p></p>
+            <p style={{'font-size': "15px", color: '#14132a'}}><em>...We hold these truths to be self-evident, that all men are created equal...</em></p>
           </p>
-          Log In
+          Login
         </h1>
         <p>
           <label htmlFor="name">🕴️ Name:</label>
@@ -62,16 +67,26 @@ function Login({ setCurrentUser }) {
           />
         </p>
         <p>
-          <button className="login" type="submit">
+          <Button 
+          variant='contained' 
+          className="login" 
+          type="submit" 
+          color="primary"
+          // LoginIcon={<LoginIcon/>}
+          >
             Log In
-          </button>
+          </Button>
         </p>
         <p>-- or --</p>
-        <button className="login">
-          <Link to="/signup" class="Links">
+        <Button 
+          variant='contained'
+          color="secondary"
+          className="TestLink"
+          >
+          <Link to="/signup" style={{color: 'white'}}>
             Initiate Processing
           </Link>
-        </button>
+        </Button>
       </form>
     </div>
   );

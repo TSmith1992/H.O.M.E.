@@ -11,7 +11,9 @@
         "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
     },
     "dependencies": {
+        "@material-ui/core": "^4.12.3",
         "@material-ui/icons": "^4.11.2",
+        "@mui/icons-material": "^5.0.4",
         "@mui/material": "^5.0.4"
     }
 }
