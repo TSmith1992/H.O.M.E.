@@ -34,7 +34,7 @@ export default function ShelterEdit({ shelter }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          history.push("/homepage");
+          window.location.reload();
         });
         alert("Your shelter has been updated with new information!");
       } else {
@@ -49,6 +49,7 @@ export default function ShelterEdit({ shelter }) {
     <div className="authForm">
       <form onSubmit={handleSubmit}>
         <br></br>
+        <h1>{shelter.name}</h1>
         <img src={shelter.picture} alt="Profile" width="300px" height="300px" />
         <p>
           <label htmlFor="name">Change Your Shelter Name here:</label>

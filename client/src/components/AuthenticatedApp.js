@@ -49,7 +49,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           </NavLink>
           {currentUser.origin_country ? (
             <NavLink to="/unitedit">
-              <button className="NavLinks">Create Units</button>
+              <button className="NavLinks">Create Migrant Units</button>
             </NavLink>
           ) : (
             <></>
@@ -72,7 +72,12 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
         <br></br>
         <p></p>
         <span className="spanLogout">
-          Logged in as...<strong>{currentUser.name}</strong>
+          Logged in as <img
+          src={currentUser.picture}
+          alt="Profile"
+          width="25px"
+          height="25px"
+        /><strong>{currentUser.name}</strong>        
           <p></p>
           <button className="logout" onClick={handleLogout}>
             Logout

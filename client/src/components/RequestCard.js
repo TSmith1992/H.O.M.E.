@@ -43,6 +43,7 @@ export default function RequestCard({ currentUser, request }) {
     })
     setRejectRequest(true)
     alert("You have rejected this move proposal. The migrant will stay in their current shelter.")
+    window.location.reload()
     // e.preventDefault();
     // fetch(`/migrant_shelters/${request.id}`, {
     //   method: "DELETE"

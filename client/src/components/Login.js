@@ -42,7 +42,7 @@ function Login({ setCurrentUser }) {
           Log In
         </h1>
         <p>
-          <label htmlFor="name">🕴️Name:🕴️</label>
+          <label htmlFor="name">🕴️ Name:</label>
           <br></br>
           <input
             type="text"
@@ -52,7 +52,7 @@ function Login({ setCurrentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="password">🤫Password:🤫</label>
+          <label htmlFor="password">🔒 Password:</label>
           <br></br>
           <input
             type="password"
@@ -69,7 +69,7 @@ function Login({ setCurrentUser }) {
         <p>-- or --</p>
         <button className="login">
           <Link to="/signup" class="Links">
-            Sign Up
+            Initiate Processing
           </Link>
         </button>
       </form>

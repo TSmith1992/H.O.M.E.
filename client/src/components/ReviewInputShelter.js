@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 export default function ReviewInputShelter({ currentUser }) {
   const history = useHistory();
-  const [score, setScore] = useState();
+  const [score, setScore] = useState(1);
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState("");
 
@@ -23,7 +23,7 @@ export default function ReviewInputShelter({ currentUser }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          history.push("/homepage");
+          // history.push("/homepage");
           window.location.reload();
         });
       } else {

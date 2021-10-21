@@ -175,7 +175,7 @@ function Signup({ setCurrentUser, currentUser }) {
         </p>
         <p>
           <button type="submit" className="login">
-            Sign Up
+            Enter Profile
           </button>
         </p>
         <p>-- or --</p>
