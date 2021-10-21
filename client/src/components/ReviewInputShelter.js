@@ -23,6 +23,7 @@ export default function ReviewInputShelter({ currentUser }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
+          alert('Thank you. Your comment has been posted.')
           // history.push("/homepage");
           window.location.reload();
         });
@@ -54,7 +55,7 @@ export default function ReviewInputShelter({ currentUser }) {
           <option value="5">5: Amazing!</option>
         </select>
         <p></p>
-        <label htmlFor="review">Got anything to say? Let us know!</label>
+        <label htmlFor="review">Write your thoughts below:</label>
         <p>
           <textarea
             type="review"

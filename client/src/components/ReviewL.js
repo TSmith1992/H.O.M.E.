@@ -3,6 +3,7 @@ import ShelterReviewsLead from "./ShelterReviewsLead";
 
 export default function ReviewL({ currentUser, reviewsS }) {
   const [showReviews, setShowReviews] = useState(false);
+  const [showMyReviews, setShowMyReviews] = useState(false);
   return (
     <div>
       <img
@@ -17,20 +18,37 @@ export default function ReviewL({ currentUser, reviewsS }) {
       <h3>{currentUser.avg_rating_lead}</h3>
       <h1>Your Reviews:</h1>
       <br></br>
-      <div>
-        {currentUser.migrant_lead_reviews.map((lReview) => (
-          <div key={lReview.id}>
-            <h1>ANONYMOUS:</h1>
-            <strong>Review Score: </strong>
-            {lReview.score}
-            <br></br>
-            <strong>Review: </strong>
-            {lReview.review}
-          </div>
-        ))}
-      </div>
-      ------------------------------------------------------------------------------------------------
+      <button onClick={() => setShowMyReviews(!showMyReviews)}>
+        {showMyReviews ? (
+          <>Click here to hide your reviews</>
+        ) : (
+          <>Click here to see your reviews</>
+        )}
+      </button>
+      {showMyReviews ? (
+        <div>
+          {currentUser.migrant_lead_reviews.map((lReview) => (
+            <div key={lReview.id}>
+              <h1>ANONYMOUS:</h1>
+              <strong>Review Score: </strong>
+              {lReview.score}
+              <br></br>
+              <strong>Review: </strong>
+              {lReview.review}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <></>
+      )}
       <h1>Your Shelters' Reviews:</h1>
+      <button onClick={() => setShowReviews(!showReviews)}>
+        {showReviews ? (
+          <>Click here to hide shelter reviews</>
+        ) : (
+          <>Click to read shelter reviews</>
+        )}
+      </button>
       <br></br>
       {currentUser.shelters.map((shelter) => (
         <div key={shelter.id}>
@@ -50,9 +68,6 @@ export default function ReviewL({ currentUser, reviewsS }) {
           </h2>
           <p>Rating:</p>
           <h2>{shelter.avg_rating_shelter}</h2>
-          <button onClick={() => setShowReviews(!showReviews)}>
-            Click to read reviews
-          </button>
           {showReviews ? (
             <ShelterReviewsLead
               currentUser={currentUser}

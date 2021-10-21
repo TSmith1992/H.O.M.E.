@@ -39,9 +39,9 @@ export default function UnitPageM({ currentUser }) {
 
   return (
     <div>
-      On this page, you can create or disband a unit group. Only unit leaders
+      On this page, you can create or disband a migrant unit group. Only unit leaders
       may disband a unit. You may only form a unit of four(4) members. Remember:
-      Being in a unit means you CANNOT be moved to a new shelter.
+      Being in a unit means you <em>CANNOT</em> be moved to a new shelter.
       <form onSubmit={handleSubmit}>
         <br></br>
         <p>

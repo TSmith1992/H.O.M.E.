@@ -6,7 +6,7 @@ export default function LeaderMoveShelterButton({ shelter, currentUser }) {
   return (
     <div>
       <button onClick={() => setRevealM(!revealM)}>
-        See Migrants in this shelter
+       {revealM?<>Hide Migrants in this shelter</>:<>See Migrants in this shelter</>}
       </button>
       {revealM ? (
         <>

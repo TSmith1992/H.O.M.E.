@@ -8,8 +8,7 @@ export default function HPageLead({ currentUser }) {
       <div>
         <h1>Hi {currentUser.name}!</h1>
         <h3 className="Title">
-          Find on this page some general information about you and your
-          activities!
+          Find on this page some general information about you and the shelters you manage.
         </h3>
         <img
           src={currentUser.picture}

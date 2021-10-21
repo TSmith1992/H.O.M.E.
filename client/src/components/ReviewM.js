@@ -12,7 +12,7 @@ export default function ReviewM({ currentUser, reviews, reviewsS }) {
   return (
     <div>
       <div>
-        <h1>Lead Information:</h1>
+        <h1>Shelter Lead Information:</h1>
         <img
           src={currentUser.lead_info.picture}
           alt="Lead"
@@ -27,7 +27,7 @@ export default function ReviewM({ currentUser, reviews, reviewsS }) {
         </button>
         {commentBox ? <ReviewInput currentUser={currentUser} /> : <></>}
         <button onClick={() => setShowReviewsL(!showReviewsL)}>
-          Click to Read Your Shelter Lead Reviews
+        {showReviewsL? <>Click to Hide Your Shelter Lead Reviews</>:<>Click to Read Your Shelter Lead Reviews</>}
         </button>
         {showReviewsL ? (
           <LeadReviews currentUser={currentUser} reviews={reviews} />
@@ -52,7 +52,7 @@ export default function ReviewM({ currentUser, reviews, reviewsS }) {
         </button>
         {commentBoxS ? <ReviewInputShelter currentUser={currentUser} /> : <></>}
         <button onClick={() => setShowReviewsS(!showReviewsS)}>
-          Click to Read Your Shelter Lead Reviews
+          {showReviewsS? <>Click to Hide Your Shelter Reviews</>:<>Click to Read Your Shelter Reviews</>}
         </button>
         {showReviewsS ? (
           <ShelterReviews currentUser={currentUser} reviewsS={reviewsS} />

@@ -6,8 +6,7 @@ export default function HPageMigrant({ currentUser }) {
     <div>
       <h1>Hi {currentUser.name}!</h1>
       <h3 className="Title">
-        Find on this page some general information about you and your
-        activities!
+        Find on this page some general information about you, your shelter, and shelter lead!
       </h3>
       <div>
         <img
@@ -18,7 +17,7 @@ export default function HPageMigrant({ currentUser }) {
         />
         <p>About you:</p>
         <h3>{currentUser.description}</h3>
-        <p>Country Origin:</p>
+        <p>Country of Origin:</p>
         <h3>{currentUser.origin_country}</h3>
         <p>Birthdate:</p>
         <h3>{currentUser.birthdate}</h3>
@@ -35,22 +34,21 @@ export default function HPageMigrant({ currentUser }) {
         </h3>
         <button>
           <Link to="/unitedit" class="Links">
-            Migrant Unit Page
+            Click hear to go to the migrant unit page
           </Link>
         </button>
       </div>
       <div>
-        <h1>Shelter:</h1>
+        <h1>Shelter: {currentUser.shelters[0].name}</h1>
         <img
           src={currentUser.shelters[0].picture}
           alt="Shelter"
           width="300px"
           height="300px"
         />
-        <h2>{currentUser.shelters[0].name}</h2>
         <p>Address:</p>
         <h2>{currentUser.shelters[0].address}</h2>
-        <p>Address:</p>
+        <p>State:</p>
         <h2>{currentUser.shelters[0].state}</h2>
         <p>Shelter Score:</p>
         <h2>{currentUser.shelters[0].avg_rating_shelter}</h2>
@@ -61,14 +59,13 @@ export default function HPageMigrant({ currentUser }) {
         </button>
       </div>
       <div>
-        <h1>Shelter Lead:</h1>
+        <h1>Shelter Lead: {currentUser.lead_info.name}</h1>
         <img
           src={currentUser.lead_info.picture}
           alt="Shelter Lead"
           width="300px"
           height="300px"
-        />
-        <h2>{currentUser.lead_info.name}</h2>
+        /><br></br>
         <button>
           <Link to="/reviews" class="Links">
             Read more about {currentUser.lead_info.name}

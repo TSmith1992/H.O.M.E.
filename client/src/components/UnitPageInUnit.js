@@ -33,7 +33,7 @@ export default function UnitPageInUnit({ currentUser }) {
       method: "DELETE",
     });
     alert(
-      `You have successfully disbanded this Unit. Now, both you and your previous Unit Members may request to move if you so choose.`
+      `You have successfully disbanded this migrant unit. Now, both you and your previous migrant unit members may request to move if you so choose.`
     );
     window.location.reload();
     history.push("/homepage");

@@ -10,7 +10,7 @@ export default function UnitPageTree({ currentUser, shelters}) {
           shelters={shelters}
         />
       ) : (
-        <>Please consult with your Unit leader about changes to your Unit</>
+        <>Please consult with your Unit leader about changes to your Unit.</>
       )}
     </div>
   );

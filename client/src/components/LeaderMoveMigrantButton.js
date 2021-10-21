@@ -15,7 +15,7 @@ export default function LeaderMoveMigrantButton({
           .filter((s) => s.name !== place.shelter.name)
           .map((location) => (
             <div>
-              Your Shelters are below:
+              Move options are below:
               <div>
                 {location.name}
                 <br></br>
