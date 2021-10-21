@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Redirect, useHistory, Link } from "react-router-dom";
-import Button from '@material-ui/core/Button'
-// import LoginIcon from '@mui/icons-material/Login';
-import '../Styling/MyCSS.css'
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
+import "../Styling/MyCSS.css";
 
 function Login({ setCurrentUser }) {
   const history = useHistory();
@@ -42,12 +42,19 @@ function Login({ setCurrentUser }) {
           <p>
             <em>House of Migrants and Expats</em>
             <p></p>
-            <p style={{'font-size': "15px", color: '#14132a'}}><em>...We hold these truths to be self-evident, that all men are created equal...</em></p>
+            <p style={{ "font-size": "15px", color: "#14132a" }}>
+              <em>
+                ...We hold these truths to be self-evident, that all men are
+                created equal...
+              </em>
+            </p>
           </p>
           Login
         </h1>
         <p>
-          <label htmlFor="name">🕴️ Name:</label>
+          <label htmlFor="name" style={{ "font-size": "20px", color: "white" }}>
+            🕴️ Name:
+          </label>
           <br></br>
           <input
             type="text"
@@ -57,7 +64,12 @@ function Login({ setCurrentUser }) {
           />
         </p>
         <p>
-          <label htmlFor="password">🔒 Password:</label>
+          <label
+            htmlFor="password"
+            style={{ "font-size": "20px", color: "white" }}
+          >
+            🔒 Password:
+          </label>
           <br></br>
           <input
             type="password"
@@ -67,23 +79,24 @@ function Login({ setCurrentUser }) {
           />
         </p>
         <p>
-          <Button 
-          variant='contained' 
-          className="login" 
-          type="submit" 
-          color="primary"
-          // LoginIcon={<LoginIcon/>}
-          >
+          <Button
+            variant="contained"
+            className="login"
+            type="submit"
+            color="primary"
+          ><p></p>
+            <img
+              src="https://www.pngfind.com/pngs/m/15-158073_apply-open-a-personal-account-icon-blue-member.png"
+              alt="login"
+              width="20px"
+              height="20px"
+            />{" "}
             Log In
           </Button>
         </p>
         <p>-- or --</p>
-        <Button 
-          variant='contained'
-          color="secondary"
-          className="TestLink"
-          >
-          <Link to="/signup" style={{color: 'white'}}>
+        <Button variant="contained" color="secondary" className="TestLink">
+          <Link to="/signup" style={{ color: "white" }}>
             Initiate Processing
           </Link>
         </Button>

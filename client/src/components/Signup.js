@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import countries from "i18n-iso-countries";
 import enLocale from "i18n-iso-countries/langs/en.json";
+import Button from "@material-ui/core/Button";
+import SaveIcon from "@material-ui/icons/Save";
+import "../Styling/MyCSS.css";
 
 function Signup({ setCurrentUser, currentUser }) {
   const history = useHistory();
@@ -66,7 +69,18 @@ function Signup({ setCurrentUser, currentUser }) {
   }
 
   return (
-    <div className="authForm">
+    <div
+      className="authForm"
+      style={{
+        color: 'black',
+        backgroundImage: `url(${"https://www.bu.edu/files/2019/09/resized-iStock-1158476263.jpg"})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        fontWeight: "bold",
+        textShadow:
+          "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+      }}
+    >
       <form onSubmit={handleSubmit}>
         <h1>Migrant Account Creation Page</h1>
         <p>
@@ -109,7 +123,6 @@ function Signup({ setCurrentUser, currentUser }) {
             onChange={(e) => setPicture(e.target.value)}
           />
         </p>
-        <p></p>
         Please Choose a Gender Identity:
         <p></p>
         <select
@@ -174,16 +187,33 @@ function Signup({ setCurrentUser, currentUser }) {
           )}
         </p>
         <p>
-          <button type="submit" className="login">
-            Enter Profile
-          </button>
+          <Button
+            type="submit"
+            className="login"
+            variant="contained"
+            color="primary"
+          >
+            Enter Profile<p></p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png"
+              alt="American Flag"
+              width="25px"
+              height="15px"
+            />
+          </Button>
         </p>
         <p>-- or --</p>
-        <button className="login">
-          <Link to="/login" class="Links">
-            Log In
+        <Button variant="contained" color="secondary" className="TestLink">
+          <Link to="/login" class="Links" style={{ color: "white" }}>
+            Log In <p></p>
+            <img
+              src="https://www.pngfind.com/pngs/m/15-158073_apply-open-a-personal-account-icon-blue-member.png"
+              alt="login"
+              width="10px"
+              height="10px"
+            />
           </Link>
-        </button>
+        </Button>
       </form>
     </div>
   );
