@@ -18,14 +18,13 @@ export default function RequestCard({ currentUser, request }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          alert("You have accepted this move proposal. The migrant will be moved to the new shelter.")
           history.push("/homepage");
           window.location.reload();
         });
-        alert("Success!");
+        alert("Success! You have accepted this move proposal. The migrant will be moved to the new shelter.")
       } else {
         res.json().then((errors) => {
-          console.log(errors);
+          // console.log(errors);
         });
       }
     });

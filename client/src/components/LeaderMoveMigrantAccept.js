@@ -5,8 +5,8 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
   const history = useHistory();
   const [errors, setErrors] = useState();
 
-  console.log("the location to move,", location);
-  console.log("the place to leave,", place);
+  // console.log("the location to move,", location);
+  // console.log("the place to leave,", place);
 
   function MoveMigrant(e) {
     e.preventDefault();
@@ -32,7 +32,7 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
         alert(`Success! You have moved the migrant to a new shelter!`);
       } else {
         res.json().then((errors) => {
-          console.log(errors);
+          // console.log(errors);
           setErrors(errors);
         });
       }

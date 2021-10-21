@@ -46,7 +46,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
         alert("Success!");
       } else {
         res.json().then((errors) => {
-          console.log(errors);
+          // console.log(errors);
           setErrors(errors);
         });
       }
