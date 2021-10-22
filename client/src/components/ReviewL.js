@@ -37,6 +37,14 @@ export default function ReviewL({ currentUser, reviewsS }) {
                       ) : (
                         <>Click here to see your reviews</>
                       )}
+                    </Button><br></br><br></br>
+                    <Button variant="contained"
+                      color="primary" onClick={() => setShowReviews(!showReviews)}>
+                      {showReviews ? (
+                        <>Click here to hide shelter reviews</>
+                      ) : (
+                        <>Click to read shelter reviews</>
+                      )}
                     </Button>
                   </div>
                 </div>
@@ -58,73 +66,66 @@ export default function ReviewL({ currentUser, reviewsS }) {
           </h1>
           {currentUser.migrant_lead_reviews.map((lReview) => (
             <div key={lReview.id}>
-                          <div 
-                          className="container1" 
-                          
-                          >
-            <div 
-            class="float-layout"
-            >
-            <div class="saloncard">
-              <h1>ANONYMOUS:</h1>
-              <strong>Review Score: </strong>
-              {lReview.score}
-              <br></br>
-              <strong>Review: </strong>
-              {lReview.review}
-              </div> </div></div>
+              <div className="container1">
+                <div class="float-layout">
+                  <div class="saloncard">
+                    <h3>ANONYMOUS:</h3>
+                    <strong>Review Score: </strong>
+                    {lReview.score}
+                    <br></br>
+                    <strong>Review: </strong>
+                    {lReview.review}
+                  </div>{" "}
+                </div>
+              </div>
             </div>
           ))}
         </div>
       ) : (
         <></>
-      )}
-      <div>
-      <br></br><br></br><br></br>
-      <h1
-            style={{
-              textAlign: "center",
-              textShadow:
-                "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
-            }}
-          >Your Shelters' Reviews:</h1>
-      <button onClick={() => setShowReviews(!showReviews)} >
-        {showReviews ? (
-          <>Click here to hide shelter reviews</>
-        ) : (
-          <>Click to read shelter reviews</>
-        )}
-      </button>
+      )}  
       <br></br>
-      {currentUser.shelters.map((shelter) => (
-        <div key={shelter.id}>
-          <h1>{shelter.name}</h1>
-          <img
-            src={shelter.picture}
-            alt="Profile"
-            width="300px"
-            height="300px"
-          />
-          <p>Address:</p>
-          <h2>
-            {shelter.address}, {shelter.state}
-          </h2>
-          <h2>
-            <em>{shelter.description}</em>
-          </h2>
-          <p>Rating:</p>
-          <h2>{shelter.avg_rating_shelter}</h2>
-          {showReviews ? (
-            <ShelterReviewsLead
-              currentUser={currentUser}
-              reviewsS={reviewsS}
-              shelter={shelter}
+      <br></br>
+      <div style={{display:'flex', justifyContent:'space-between'}}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        {currentUser.shelters.map((shelter) => (
+          <div key={shelter.id} className="authForm" style={{ color: "yellow" , border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto', order: 5 }}>
+            <Card sx={{ maxWidth: 900 }} style={{ backgroundColor: "palevioletred", maxHeight: 'auto', borderRadius: '25px' }}>
+            <div className="card-container" style={{ textAlign: "center", border:'none'}}>
+        <div class="float-layout">
+            <h1>{shelter.name}</h1>
+            <img
+              src={shelter.picture}
+              alt="Profile"
+              width="300px"
+              height="300px"
             />
-          ) : (
-            <></>
-          )}
-        </div>
-      ))}</div>
+            <p>Address:</p>
+            <h2>
+              {shelter.address}, {shelter.state}
+            </h2>
+            <h2>
+              <em>{shelter.description}</em>
+            </h2>
+            <p>Rating:</p>
+            <h2>{shelter.avg_rating_shelter}</h2>
+            <div style={{display:'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center', alignContent: 'center'}}>
+            {showReviews ? (
+              <ShelterReviewsLead
+                currentUser={currentUser}
+                reviewsS={reviewsS}
+                shelter={shelter}
+              />
+            ) : (
+              <></>
+            )}</div></div></div>
+            </Card>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
