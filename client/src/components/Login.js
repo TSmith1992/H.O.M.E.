@@ -31,7 +31,13 @@ function Login({ setCurrentUser }) {
     });
   };
   return (
-    <div className="authFormLogin">
+    <div
+      className="authFormLogin"
+      style={{
+        textShadow:
+          "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+      }}
+    >
       <Redirect to="/" />
       <form onSubmit={handleSubmit}>
         <h1>
@@ -84,7 +90,8 @@ function Login({ setCurrentUser }) {
             className="login"
             type="submit"
             color="primary"
-          ><p></p>
+          >
+            <p></p>
             <img
               src="https://www.pngfind.com/pngs/m/15-158073_apply-open-a-personal-account-icon-blue-member.png"
               alt="login"

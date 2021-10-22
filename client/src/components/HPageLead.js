@@ -9,7 +9,12 @@ export default function HPageLead({ currentUser }) {
     <div>
       <div className="cardsCenter">
         <h3 className="Title">
-          <em>
+          <em
+            style={{
+              textShadow:
+                "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+            }}
+          >
             Find on this page some general information about you and the
             shelters you manage.
           </em>
@@ -31,10 +36,7 @@ export default function HPageLead({ currentUser }) {
                     <h3>{currentUser.description}</h3>
                     <p class="card-titles">Average Rating:</p>
                     <h3>{currentUser.avg_rating_lead}</h3>
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                    >
+                    <Button variant="contained" color="secondary">
                       <Link to="/reviews" style={{ color: "white" }}>
                         Read Your Reviews Here 📖
                       </Link>
@@ -46,6 +48,16 @@ export default function HPageLead({ currentUser }) {
           </div>
         </Card>
       </div>
+      <br></br>
+      <h1
+        style={{
+          textAlign: "center",
+          textShadow:
+            "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+        }}
+      >
+        Your Shelters:
+      </h1>
       <br></br>
       <div class="container">
         {currentUser.shelters.map((shelter) => (

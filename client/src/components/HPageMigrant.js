@@ -7,10 +7,12 @@ export default function HPageMigrant({ currentUser }) {
   return (
     <div>
       <div className="cardsCenter">
-      <h3 className="Title">
-        <em>Find on this page some general information about you, your shelter, and
-        shelter lead!</em>
-      </h3>
+        <h3 className="Title">
+          <em>
+            Find on this page some general information about you, your shelter,
+            and shelter lead!
+          </em>
+        </h3>
         <Card sx={{ maxWidth: 1000 }}>
           <div className="card-container">
             <div class="float-layout">
@@ -57,18 +59,17 @@ export default function HPageMigrant({ currentUser }) {
             </div>
           </div>
         </Card>
-      </div><br></br>
+      </div>
+      <br></br>
       <div class="container">
         <Card sx={{ maxWidth: 500 }}>
           <div className="card-container">
-            <div class="float-layout" >
-              <div class="card-image" style={{ height: '620px', width: '500px', align: 'center' }}>
-                <img
-                  src={currentUser.lead_info.picture}
-                  alt="Shelter Lead"
-                  // width="300px"
-                  // height="300px"
-                />
+            <div class="float-layout">
+              <div
+                class="card-image"
+                style={{ height: "620px", width: "500px", align: "center" }}
+              >
+                <img src={currentUser.lead_info.picture} alt="Shelter Lead" />
                 <div class="card" style={{ backgroundColor: "palevioletred" }}>
                   <div class="card-title" style={{ color: "black" }}>
                     <h3 style={{ color: "black" }}>

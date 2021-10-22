@@ -4,7 +4,8 @@ class Shelter < ApplicationRecord
   has_many :migrant_shelter_reviews
   has_many :migrants, through: :migrant_shelters
 
-  validates :description, length:{minimum: 50}
+  validates :name, :picture, presence: true
+  validates :description, length:{minimum: 10}
 
   def avg_rating_shelter
     shelter = self
