@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Button from "@material-ui/core/Button";
 
 export default function MProfileEdit({ currentUser, setCurrentUser }) {
   const history = useHistory();
@@ -53,10 +54,10 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
     });
   }
   return (
-    <div className="authForm">
+    <div className="authForm" style={{ color: "white" }}>
       <form onSubmit={handleSubmit}>
         <h1>
-          Click the Checkbox next to the editing space to keep your old data
+          Click the circle next to the editing space to keep your old data
         </h1>
         <br></br>
         <p>
@@ -69,7 +70,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="password"
             value="password"
             onChange={keepCurrent}
@@ -87,7 +88,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="password confirmation"
             value="password_confirmation"
             onChange={keepCurrent}
@@ -103,7 +104,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
             onChange={(e) => setPicture(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="picture"
             value="currentUser.picture"
             onChange={keepCurrent}
@@ -121,7 +122,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="description"
             value="currentUser.description"
             onChange={keepCurrent}
@@ -141,7 +142,12 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
           )}
         </p>
         <p>
-          <button type="submit">Confirm Changes</button>
+        <Button
+            variant="contained"
+            className="login"
+            type="submit"
+            color="secondary"
+          >Confirm Changes 💾</Button>
         </p>
       </form>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 export default function ShelterEdit({ shelter }) {
   const history = useHistory();
@@ -46,7 +47,7 @@ export default function ShelterEdit({ shelter }) {
     });
   }
   return (
-    <div className="authForm">
+    <div className="authForm" style={{ color: "yellow" , border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto' }}>
       <form onSubmit={handleSubmit}>
         <br></br>
         <h1>{shelter.name}</h1>
@@ -61,7 +62,7 @@ export default function ShelterEdit({ shelter }) {
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="name"
             value="currentUser.name"
             onChange={keepCurrent}
@@ -77,7 +78,7 @@ export default function ShelterEdit({ shelter }) {
             onChange={(e) => setPicture(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="picture"
             value="picture"
             onChange={keepCurrent}
@@ -96,7 +97,7 @@ export default function ShelterEdit({ shelter }) {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="checkbox"
+            type="radio"
             name="description"
             value="description"
             onChange={keepCurrent}
@@ -116,7 +117,14 @@ export default function ShelterEdit({ shelter }) {
           )}
         </p>
         <p>
-          <button type="submit">Confirm Changes</button>
+          <Button
+            variant="contained"
+            className="login"
+            type="submit"
+            color="secondary"
+          >
+            Confirm Changes 💾
+          </Button>
         </p>
       </form>
     </div>

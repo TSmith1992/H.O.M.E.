@@ -1,3 +1,69 @@
+/* .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+} */
+
+/* .Card {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 90px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 5px solid #FFFF00;
+  padding-bottom: 18%;
+  margin-bottom: 2;
+  width: 30%;
+  border-radius: 75px
+} */
+/* img {
+  border: 5px solid red;
+} */
+
+/* .saloncard{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 9px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 5px solid #FFFF00;
+  padding-bottom: 18%;
+  margin-bottom: 2;
+  width: 35%;
+  border-radius: 75px
+} */
+
+/* .stylistcard{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 9px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 5px solid #FFFF00;
+  padding-bottom: 5%;
+  width: 35%;
+  border-radius: 75px;
+  box-sizing: border-box;
+} */
+
+
+/* .pending{
+  display: flex;
+  flex-direction: column;
+  align-items: inherit 
+}
+
+.pendingCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.pendingCard2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+} */
+
 
   body {
     margin: 0;
@@ -91,120 +157,136 @@
       font-size: 110%
     }
   
-  .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .Card {
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    padding: 90px;
-    text-align: center;
-    background-color: #f1f1f1;
-    border: 5px solid #FFFF00;
-    padding-bottom: 18%;
-    margin-bottom: 2;
-    width: 30%;
-    border-radius: 75px
-  }
-  
-  .topNav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .spanNLinks{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .spanLogout{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .NavLinks{
-    background-color: #002868 ;
-    color: white;
-    border-radius: 25px;
-    font-size: 110%;
-    text-align: center;
-    list-style-type: none;
+    .topNav{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     
-  }
-  button>.NavLinks:hover{
-    background-color: #a67b5b;
-    color: black;
-    border-radius: 25px;
-    font-size: 110%
-  }
-  
-  .logout{
-    background-color: red;
-    color: black;
-    border-radius: 25px;
-    font-size: 110%
-  }
-  
-  /* img {
-    border: 5px solid red;
-  } */
-  
-  .saloncard{
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    padding: 9px;
-    text-align: center;
-    background-color: #f1f1f1;
-    border: 5px solid #FFFF00;
-    padding-bottom: 18%;
-    margin-bottom: 2;
-    width: 35%;
-    border-radius: 75px
-  }
-  
-  .stylistcard{
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    padding: 9px;
-    text-align: center;
-    background-color: #f1f1f1;
-    border: 5px solid #FFFF00;
-    padding-bottom: 5%;
-    width: 35%;
-    border-radius: 75px;
-    box-sizing: border-box;
-  }
-  
-  .newClassName{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap:wrap;
-  }
-  
-  .pending{
-    display: flex;
-    flex-direction: column;
-    align-items: inherit 
-  }
-  
-  .pendingCard{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  
-  .pendingCard2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .TestLink{
+    .spanNLinks{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .spanLogout{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .NavLinks{
+      background-color: #002868 ;
+      color: white;
+      border-radius: 25px;
+      font-size: 110%;
+      text-align: center;
+      list-style-type: none;
+      
+    }
+    button>.NavLinks:hover{
+      background-color: #a67b5b;
       color: black;
-  }
+      border-radius: 25px;
+      font-size: 110%
+    }
+    
+    .logout{
+      background-color: red;
+      color: black;
+      border-radius: 25px;
+      font-size: 110%
+    }
+    
+    
+    .TestLink{
+      color: black;
+    }
+    
+    .newClassName{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap:wrap;
+    }
+
+    /* 
+    
+    Test Material........
+
+    */
+
+    .float-layout {
+      padding: 5px 5px;
+      float: left;
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    
+    .card-container {
+      overflow: hidden;
+      border: 2px solid red;
+    }
+    /*add this it*/
+    .card-image {
+      display: flex;
+    }
+    /*-------------*/
+    
+    div.card-image img {
+      width: 50%;
+      height: auto;
+    }
+    
+    .card {
+      background-color: #002868;
+      color: black;
+      min-height: 100%; /*replace this it in width: 100%*/
+      width: 50%;
+      float: right;
+    }
+    
+    .card-title {
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      padding-top: 20px;
+      color: yellow
+    }
+    
+    .card-desc {
+      padding: 10px;
+      text-align: left;
+      font-size: 18px;
+      color: white;
+    }
+    
+    
+    .card-titles{
+      color: yellow
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between
+      
+      /* max-width: 1200px; */
+      /* margin: 0 auto;  */
+      /* display: grid;
+      grid-gap: 1rem; */
+      /* position: absolute; */
+      /* top: 90px;
+      bottom: 0;
+      grid-template-columns: repeat(2, 1fr); */
+      
+    } 
+
+    .cardsCenter {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1rem;
+    } 
+
