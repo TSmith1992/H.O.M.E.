@@ -1,34 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HPageShelter from "./HPageShelter";
+import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
 
 export default function HPageLead({ currentUser }) {
   return (
     <div>
-      <div>
-        <h1>Hi {currentUser.name}!</h1>
+      <div className="cardsCenter">
         <h3 className="Title">
-          Find on this page some general information about you and the shelters you manage.
+          <em>
+            Find on this page some general information about you and the
+            shelters you manage.
+          </em>
         </h3>
-        <img
-          src={currentUser.picture}
-          alt="Profile"
-          width="300px"
-          height="300px"
-        />
-        <p>About you:</p>
-        <h3>{currentUser.description}</h3>
-        <p>Average Rating:</p>
-        <h3>{currentUser.avg_rating_lead}</h3>
-        <button>
-          <Link to="/reviews" class="Links">
-            Read Your Reviews Here
-          </Link>
-        </button>
+        <Card sx={{ maxWidth: 1000 }}>
+          <div className="card-container">
+            <div class="float-layout">
+              <div class="card-image">
+                <img
+                  src={currentUser.picture}
+                  alt="Profile"
+                  width="600px"
+                  height="300px"
+                />
+                <div class="card">
+                  <div class="card-title">{currentUser.name}</div>
+                  <div class="card-desc">
+                    <p class="card-titles">About you:</p>
+                    <h3>{currentUser.description}</h3>
+                    <p class="card-titles">Average Rating:</p>
+                    <h3>{currentUser.avg_rating_lead}</h3>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                    >
+                      <Link to="/reviews" style={{ color: "white" }}>
+                        Read Your Reviews Here 📖
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
       </div>
       <br></br>
-      <span>Read Below Some Quick Details of Your Shelters</span>
-      <div>
+      <div class="container">
         {currentUser.shelters.map((shelter) => (
           <HPageShelter key={shelter.name} shelter={shelter} />
         ))}

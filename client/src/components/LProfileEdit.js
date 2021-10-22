@@ -161,11 +161,12 @@ export default function LProfileEdit({ currentUser, setCurrentUser }) {
       >
         {" "}
         Click Here to Edit Your Shelters 🏠
-      </Button>
+      </Button><br></br>
       {reveal ? (
         <></>
       ) : (
         <div>
+          <br></br>
           {currentUser.shelters.map((shelter) => (
             <ShelterEdit key={shelter.id} shelter={shelter} />
           ))}
