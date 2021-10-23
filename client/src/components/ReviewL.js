@@ -33,17 +33,17 @@ export default function ReviewL({ currentUser, reviewsS }) {
                       onClick={() => setShowMyReviews(!showMyReviews)}
                     >
                       {showMyReviews ? (
-                        <>Click here to hide your reviews</>
+                        <>Click here to hide your reviews ❌</>
                       ) : (
-                        <>Click here to see your reviews</>
+                        <>Click here to see your reviews 📖</>
                       )}
                     </Button><br></br><br></br>
                     <Button variant="contained"
                       color="primary" onClick={() => setShowReviews(!showReviews)}>
                       {showReviews ? (
-                        <>Click here to hide shelter reviews</>
+                        <>Click here to hide shelter reviews ❌</>
                       ) : (
-                        <>Click to read shelter reviews</>
+                        <>Click to read shelter reviews 🏠</>
                       )}
                     </Button>
                   </div>
@@ -53,9 +53,7 @@ export default function ReviewL({ currentUser, reviewsS }) {
           </div>
         </Card>
       </div>
-      {showMyReviews ? (
-        <div>
-          <h1
+      <h1
             style={{
               textAlign: "center",
               textShadow:
@@ -64,11 +62,13 @@ export default function ReviewL({ currentUser, reviewsS }) {
           >
             Your Reviews:
           </h1>
+      {showMyReviews ? (
+        <div className="container1">
           {currentUser.migrant_lead_reviews.map((lReview) => (
-            <div key={lReview.id}>
-              <div className="container1">
-                <div class="float-layout">
-                  <div class="saloncard">
+            <div key={lReview.id} class="saloncard" >
+              <div >
+                <div>
+                  <div >
                     <h3>ANONYMOUS:</h3>
                     <strong>Review Score: </strong>
                     {lReview.score}
@@ -92,7 +92,7 @@ export default function ReviewL({ currentUser, reviewsS }) {
         <br></br>
         <br></br>
         {currentUser.shelters.map((shelter) => (
-          <div key={shelter.id} className="authForm" style={{ color: "yellow" , border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto', order: 5 }}>
+          <div key={shelter.id} className="authForm" style={{ color: "yellow" ,border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto', order: 5 }}>
             <Card sx={{ maxWidth: 900 }} style={{ backgroundColor: "palevioletred", maxHeight: 'auto', borderRadius: '25px' }}>
             <div className="card-container" style={{ textAlign: "center", border:'none'}}>
         <div class="float-layout">

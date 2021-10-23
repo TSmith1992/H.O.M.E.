@@ -1,11 +1,12 @@
 .container1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  align: center;
-  height: auto;
+  align-items: center;
+  align-content: space-around;
+  /* height: auto;
   width: 1250px;
-  max-width: 100%;
+  max-width: 100%; */
   
   /* border-radius: 25px;
   border: 5px solid #BF0A30;
@@ -34,16 +35,25 @@
 } */
 
 .saloncard{
+  order: 5;
   
-    background-color: #002868;
-    min-height: 100%; /*replace this it in width: 100%*/
-    width: 50%;
-    float: right;
+  background-color: #002868;
+    border-radius: 25px;
     color:#cdb891; 
-    border: 30px solid palevioletred;
+    border: 3px solid white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    padding: 9px;
+    padding: 20px;
   
+}
+.saloncard:hover{
+
+  background-color: #f1f1f1;
+  color:black;
+      /* min-height: 100%; */
+    /* width: 50%; */
+    /* float: right; */
+
+
 }
 
 .stylistcard{
@@ -306,4 +316,29 @@
       display: grid;
       grid-gap: 1rem;
     } 
+
+    /* Float four columns side by side */
+.columnReview {
+  /* float: left; */
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.rowReview {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.rowReview:after {
+  content: "";
+  display: row;
+  clear: both;
+}
+
+/* Style the counter cards */
+.cardReview {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
 
