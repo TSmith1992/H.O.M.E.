@@ -58,7 +58,7 @@ function Login({ setCurrentUser }) {
           Login
         </h1>
         <p>
-          <label htmlFor="name" style={{ "font-size": "20px", color: "white" }}>
+          <label htmlFor="name" style={{ "font-size": "25px", color: "black" }}>
             🕴️ Name:
           </label>
           <br></br>
@@ -72,7 +72,7 @@ function Login({ setCurrentUser }) {
         <p>
           <label
             htmlFor="password"
-            style={{ "font-size": "20px", color: "white" }}
+            style={{ "font-size": "25px", color: "black" }}
           >
             🔒 Password:
           </label>

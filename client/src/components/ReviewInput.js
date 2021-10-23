@@ -23,7 +23,7 @@ export default function ReviewInput({ currentUser }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          alert('Thank you. Your comment has been posted.')
+          alert("Thank you. Your comment has been posted.");
           // history.push("/homepage");
           window.location.reload();
         });
@@ -38,7 +38,15 @@ export default function ReviewInput({ currentUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className="authForm"
+        style={{
+          color: "white",
+          textShadow:
+            "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+        }}
+      >
         <p></p>
         General Score:
         <p></p>

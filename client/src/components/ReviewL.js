@@ -37,9 +37,14 @@ export default function ReviewL({ currentUser, reviewsS }) {
                       ) : (
                         <>Click here to see your reviews 📖</>
                       )}
-                    </Button><br></br><br></br>
-                    <Button variant="contained"
-                      color="primary" onClick={() => setShowReviews(!showReviews)}>
+                    </Button>
+                    <br></br>
+                    <br></br>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => setShowReviews(!showReviews)}
+                    >
                       {showReviews ? (
                         <>Click here to hide shelter reviews ❌</>
                       ) : (
@@ -53,22 +58,26 @@ export default function ReviewL({ currentUser, reviewsS }) {
           </div>
         </Card>
       </div>
-      <h1
-            style={{
-              textAlign: "center",
-              textShadow:
-                "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
-            }}
-          >
-            Your Reviews:
-          </h1>
+      {showMyReviews ? (
+        <h1
+          style={{
+            textAlign: "center",
+            textShadow:
+              "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+          }}
+        >
+          Your Reviews:
+        </h1>
+      ) : (
+        <></>
+      )}
       {showMyReviews ? (
         <div className="container1">
           {currentUser.migrant_lead_reviews.map((lReview) => (
-            <div key={lReview.id} class="saloncard" >
-              <div >
+            <div key={lReview.id} class="saloncard">
+              <div>
                 <div>
-                  <div >
+                  <div>
                     <h3>ANONYMOUS:</h3>
                     <strong>Review Score: </strong>
                     {lReview.score}
@@ -83,45 +92,77 @@ export default function ReviewL({ currentUser, reviewsS }) {
         </div>
       ) : (
         <></>
-      )}  
+      )}
       <br></br>
       <br></br>
-      <div style={{display:'flex', justifyContent:'space-between'}}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         {currentUser.shelters.map((shelter) => (
-          <div key={shelter.id} className="authForm" style={{ color: "yellow" ,border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto', order: 5 }}>
-            <Card sx={{ maxWidth: 900 }} style={{ backgroundColor: "palevioletred", maxHeight: 'auto', borderRadius: '25px' }}>
-            <div className="card-container" style={{ textAlign: "center", border:'none'}}>
-        <div class="float-layout">
-            <h1>{shelter.name}</h1>
-            <img
-              src={shelter.picture}
-              alt="Profile"
-              width="300px"
-              height="300px"
-            />
-            <p>Address:</p>
-            <h2>
-              {shelter.address}, {shelter.state}
-            </h2>
-            <h2>
-              <em>{shelter.description}</em>
-            </h2>
-            <p>Rating:</p>
-            <h2>{shelter.avg_rating_shelter}</h2>
-            <div style={{display:'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center', alignContent: 'center'}}>
-            {showReviews ? (
-              <ShelterReviewsLead
-                currentUser={currentUser}
-                reviewsS={reviewsS}
-                shelter={shelter}
-              />
-            ) : (
-              <></>
-            )}</div></div></div>
+          <div
+            key={shelter.id}
+            className="authForm"
+            style={{
+              color: "yellow",
+              border: "2px solid yellow",
+              width: "50em",
+              marginLeft: "auto",
+              marginRight: "auto",
+              order: 5,
+            }}
+          >
+            <Card
+              sx={{ maxWidth: 900 }}
+              style={{
+                backgroundColor: "palevioletred",
+                maxHeight: "auto",
+                borderRadius: "25px",
+              }}
+            >
+              <div
+                className="card-container"
+                style={{ textAlign: "center", border: "none" }}
+              >
+                <div class="float-layout">
+                  <h1>{shelter.name}</h1>
+                  <img
+                    src={shelter.picture}
+                    alt="Profile"
+                    width="300px"
+                    height="300px"
+                  />
+                  <p>Address:</p>
+                  <h2>
+                    {shelter.address}, {shelter.state}
+                  </h2>
+                  <h2>
+                    <em>{shelter.description}</em>
+                  </h2>
+                  <p>Rating:</p>
+                  <h2>{shelter.avg_rating_shelter}</h2>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      justifyContent: "space-evenly",
+                      alignItems: "center",
+                      alignContent: "center",
+                    }}
+                  >
+                    {showReviews ? (
+                      <ShelterReviewsLead
+                        currentUser={currentUser}
+                        reviewsS={reviewsS}
+                        shelter={shelter}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+              </div>
             </Card>
           </div>
         ))}

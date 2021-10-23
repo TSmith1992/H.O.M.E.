@@ -89,7 +89,7 @@ export default function HPageMigrant({ currentUser }) {
                     color="secondary"
                   >
                     <Link to="/reviews" style={{ color: "white" }}>
-                      Read more about {currentUser.lead_info.name}
+                      Read more about {currentUser.lead_info.name} 📖
                     </Link>
                   </Button>
                 </div>
