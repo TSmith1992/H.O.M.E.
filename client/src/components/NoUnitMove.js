@@ -5,6 +5,7 @@ export default function NoUnitMove({ currentUser, shelters, setChosenMove }) {
 
   return (
     <div>
+      <br></br><br></br>
       {!shelters ? (
         <>Loading...</>
       ) : (
@@ -15,7 +16,7 @@ export default function NoUnitMove({ currentUser, shelters, setChosenMove }) {
             setChosenMove={setChosenMove}
           />
         ))
-      )}
+      )}<br></br><br></br>
     </div>
   );
 }

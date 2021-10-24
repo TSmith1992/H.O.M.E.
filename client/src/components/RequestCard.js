@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
+import Button from "@mui/material/Button";
 
 export default function RequestCard({ currentUser, request }) {
   const history = useHistory();
@@ -57,7 +58,7 @@ export default function RequestCard({ currentUser, request }) {
   console.log("request information,", request);
   return (
     <>
-    {rejectRequest || request.hidden? <></>:<div key={request.id}>
+    {rejectRequest || request.hidden? <></>:<div key={request.id} className="saloncard" style={{width:'100%'}}>
     <strong>Name of Migrant:</strong> {request.migrant.name}
     <br></br>
     <img

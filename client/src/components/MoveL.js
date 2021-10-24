@@ -3,7 +3,7 @@ import RequestCard from "./RequestCard";
 
 export default function MoveL({ currentUser }) {
   return (
-    <div>
+    <div className="container1">
       {currentUser.migrant_shelters
         .filter((shelter) => shelter.active !== true)
         .map((request) => (

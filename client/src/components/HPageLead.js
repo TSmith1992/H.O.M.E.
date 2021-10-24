@@ -59,7 +59,7 @@ export default function HPageLead({ currentUser }) {
         Your Shelters:
       </h1>
       <br></br>
-      <div class="container">
+      <div class="container1">
         {currentUser.shelters.map((shelter) => (
           <HPageShelter key={shelter.name} shelter={shelter} />
         ))}

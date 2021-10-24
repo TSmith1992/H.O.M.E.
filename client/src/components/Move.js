@@ -4,7 +4,7 @@ import MoveL from "./MoveL";
 
 export default function Move({ currentUser, shelters, setChosenMove }) {
   return (
-    <div>
+    <div className="container1">
       {currentUser.lead_info ? (
         <MoveM
           currentUser={currentUser}

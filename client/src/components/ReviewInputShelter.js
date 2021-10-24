@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Button from "@material-ui/core/Button";
 
 export default function ReviewInputShelter({ currentUser }) {
   const history = useHistory();
@@ -83,7 +84,11 @@ export default function ReviewInputShelter({ currentUser }) {
             <></>
           )}
         </p>
-        <button type="submit">Submit Review</button>
+        <Button
+          variant="contained"
+          className="login"
+          type="submit"
+          color="secondary">Submit Review ✅</Button>
       </form>
     </div>
   );

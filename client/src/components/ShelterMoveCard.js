@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 export default function ShelterMoveCard({
   currentUser,
@@ -38,12 +39,15 @@ export default function ShelterMoveCard({
   }
 
   return (
-    <div key={shelter.id}>
+    <div key={shelter.id} className="saloncard">
+      <div style={{textAlign: 'center'}}>
       <h1>{shelter.name}</h1>
       <h2>
         <strong>Lead:</strong> {shelter.lead.name}
-      </h2>
-      <img src={shelter.picture} alt="shelter" width="300px" height="300px" />
+      </h2></div>
+      <div style={{textAlign: 'center'}}>
+      <img src={shelter.picture} alt="shelter" width="300px" height="300px"/>
+      </div>
       <p>Address:</p>
       <h2>
         {shelter.address}, {shelter.state}
@@ -63,9 +67,12 @@ export default function ShelterMoveCard({
           here.
         </strong>
       ) : (
-        <button onClick={RequestChange}>
-          Click here to request this place to move
-        </button>
+                            <div style={{textAlign: "center"}}><Button
+        variant="contained"
+        className="login"
+        color="secondary" onClick={RequestChange}>
+          Click here to request this place to move 👋
+        </Button></div>
       )}
     </div>
   );

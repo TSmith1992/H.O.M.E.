@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Button from "@material-ui/core/Button";
 
 export default function UnitPageM({ currentUser }) {
   const history = useHistory();
@@ -39,21 +40,41 @@ export default function UnitPageM({ currentUser }) {
 
   return (
     <div>
-      <div> <strong>         <em
+      <div>
+        {" "}
+        <strong>
+          {" "}
+          <em
             style={{
               textShadow:
                 "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
             }}
-          >On this page, you can create or disband a migrant unit group. Only unit leaders
-      may disband a unit. You may only form a unit of four(4) members. Remember:
-      Being in a unit means you CANNOT be moved to a new shelter.</em></strong></div>
-      <form onSubmit={handleSubmit} className="authForm" style={{ color: "yellow" , border: '2px solid yellow',width:'50em' ,marginLeft:'auto', marginRight:'auto' }}>
+          >
+            On this page, you can create or disband a migrant unit group. Only
+            unit leaders may disband a unit. You may only form a unit of four(4)
+            members. Remember: Being in a unit means you CANNOT be moved to a
+            new shelter.
+          </em>
+        </strong>
+      </div>
+      <form
+        onSubmit={handleSubmit}
+        className="authForm"
+        style={{
+          color: "yellow",
+          border: "2px solid yellow",
+          width: "50em",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
         <br></br>
         <p>
           <label htmlFor="unitLead">
             Your Unit ID is below. As Unit lead, you may disband a created unit:
           </label>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           <input
             type="unitLead"
             name="unitLead"
@@ -65,7 +86,8 @@ export default function UnitPageM({ currentUser }) {
           <label htmlFor="personA">
             Write the Unit ID of the second person in your Unit:
           </label>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           <input
             type="input"
             name="personA"
@@ -77,7 +99,8 @@ export default function UnitPageM({ currentUser }) {
           <label htmlFor="personB">
             Write the Unit ID of the third person in your Unit:
           </label>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           <input
             type="personB"
             name="personB"
@@ -89,7 +112,8 @@ export default function UnitPageM({ currentUser }) {
           <label htmlFor="personC">
             Write the Unit ID of the fourth person in your Unit:
           </label>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
           <input
             type="personC"
             name="personC"
@@ -102,7 +126,7 @@ export default function UnitPageM({ currentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li style={{color: 'palevioletred'}}>{error}</li>
+                  <li style={{ color: "palevioletred" }}>{error}</li>
                 </strong>
               ))}
             </>
@@ -110,7 +134,14 @@ export default function UnitPageM({ currentUser }) {
             <></>
           )}
         </p>
-        <button type="submit">Confirm Changes</button>
+        <Button
+          variant="contained"
+          className="login"
+          type="submit"
+          color="secondary"
+        >
+          Confirm Changes 💾
+        </Button>
       </form>
     </div>
   );
