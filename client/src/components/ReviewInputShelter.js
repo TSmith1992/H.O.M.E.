@@ -38,7 +38,13 @@ export default function ReviewInputShelter({ currentUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}
+              className="authForm"
+              style={{
+                color: "white",
+                textShadow:
+                  "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+              }}>
         <p></p>
         General Score:
         <p></p>
