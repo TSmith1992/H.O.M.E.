@@ -105,13 +105,13 @@ export default function ShelterEdit({ shelter }) {
         </p>
         <p>
           {errors ? (
-            <>
+            <div>
               {errors.errors.map((error) => (
-                <strong key={error}>
-                  <li>{error}</li>
+                <strong key={error} >
+                  <li style={{color: 'palevioletred'}}>{error}</li>
                 </strong>
               ))}
-            </>
+            </div>
           ) : (
             <></>
           )}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
 
 export default function UnitPageInUnit({ currentUser }) {
   const history = useHistory();
@@ -36,109 +38,228 @@ export default function UnitPageInUnit({ currentUser }) {
       `You have successfully disbanded this migrant unit. Now, both you and your previous migrant unit members may request to move if you so choose.`
     );
     window.location.reload();
-    history.push("/homepage");
   }
 
   return (
     <div>
       {personC && personA && personB ? (
         <>
-          Your Unit:
-          <button onClick={() => setDeleteCon(!deleteCon)}>
+          <Button
+            variant="contained"
+            className="login"
+            color="secondary"
+            onClick={() => setDeleteCon(!deleteCon)}
+          >
             Click here disband your unit
-          </button>
+          </Button>
           {deleteCon ? (
-            <span>
+            <span
+              style={{
+                border: "3px solid white",
+                backgroundColor: "yellow",
+                textShadow:
+                  "0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black",
+                textAlign: "center",
+                align: "center",
+              }}
+            >
+              <br></br>
+              <br></br>
               Are you sure you would like to delete this Unit? Click the button
               below to confirm.<br></br>
-              <button onClick={deleteUnit}>Confirm Unit Disband</button>
+              <br></br>
+              <Button
+                variant="contained"
+                className="login"
+                type="submit"
+                color="primary"
+                style={{ backgroundColor: "red" }}
+                onClick={deleteUnit}
+              >
+                Confirm Unit Disband ✖️
+              </Button>
             </span>
           ) : (
             <></>
           )}
-          <div>
-            <h1>
-              {currentUser.name} <em>(Unit Lead)</em>
-            </h1>
-            <img
-              src={currentUser.picture}
-              alt="Profile"
-              width="300px"
-              height="300px"
-            />
-            <p>About you:</p>
-            <h3>{currentUser.description}</h3>
-            <p>Country Origin:</p>
-            <h3>{currentUser.origin_country}</h3>
-            <p>Shelter Location:</p>
-            <h3>
-              {currentUser.shelters[0].name}, {currentUser.shelters[0].address},
-              {currentUser.shelters[0].state}
-            </h3>
-          </div>
-          <div>
-            <h1>
-              {personA.name} <em>(Unit Member)</em>
-            </h1>
-            <img
-              src={personA.picture}
-              alt="Profile"
-              width="300px"
-              height="300px"
-            />
-            <p>About you:</p>
-            <h3>{personA.description}</h3>
-            <p>Country Origin:</p>
-            <h3>{personA.origin_country}</h3>
-            <p>Shelter Location:</p>
-            <h3>
-              {personA.shelters[0].name}, {personA.shelters[0].address},
-              {personA.shelters[0].state}
-            </h3>
-          </div>
-          <div>
-            <h1>
-              {personB.name} <em>(Unit Member)</em>
-            </h1>
-            <img
-              src={personB.picture}
-              alt="Profile"
-              width="300px"
-              height="300px"
-            />
-            <p>About you:</p>
-            <h3>{personB.description}</h3>
-            <p>Country Origin:</p>
-            <h3>{personB.origin_country}</h3>
-            <p>Shelter Location:</p>
-            <h3>
-              {personB.shelters[0].name}, {personB.shelters[0].address},
-              {personB.shelters[0].state}
-            </h3>
-          </div>
-          <div>
-            <h1>
-              {personC.name} <em>(Unit Member)</em>
-            </h1>
-            <img
-              src={personC.picture}
-              alt="Profile"
-              width="300px"
-              height="300px"
-            />
-            <p>About you:</p>
-            <h3>{personC.description}</h3>
-            <p>Country Origin:</p>
-            <h3>{personC.origin_country}</h3>
-            <p>Shelter Location:</p>
-            <h3>
-              {personC.shelters[0].name}, {personC.shelters[0].address},
-              {personC.shelters[0].state}
-            </h3>
+          <br></br>
+          <br></br>
+          <div className="cardsCenter">
+            <Card sx={{ maxWidth: 1000 }}>
+              <div className="card-container">
+                <div class="float-layout">
+                  <div class="card-image">
+                    <img
+                      src={currentUser.picture}
+                      alt="Profile"
+                      width="300px"
+                      height="300px"
+                    />
+                    <div class="card">
+                      <h1 class="card-title">
+                        {currentUser.name}{" "}
+                        <em
+                          style={{
+                            textShadow:
+                              "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                          }}
+                        >
+                          [Unit Lead]
+                        </em>
+                      </h1>
+                      <div class="card-desc">
+                        <p class="card-titles">About you:</p>
+                        <h3>{currentUser.description}</h3>
+                        <p class="card-titles">Country Origin:</p>
+                        <h3>{currentUser.origin_country}</h3>
+                        <p class="card-titles">Shelter Location:</p>
+                        <h3>
+                          {currentUser.shelters[0].name},{" "}
+                          {currentUser.shelters[0].address},
+                          {currentUser.shelters[0].state}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>{" "}
+          <br></br>
+          <br></br>
+          <div className="container1">
+            <div className="saloncard">
+              <h1>
+                {personA.name}{" "}
+                <em
+                  style={{
+                    textShadow:
+                      "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                  }}
+                >
+                  [Unit Member]
+                </em>
+              </h1>
+              <img
+                src={personA.picture}
+                alt="Profile"
+                width="300px"
+                height="300px"
+              />
+              <p
+                class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}
+              >
+                About you:
+              </p>
+              <h3>{personA.description}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Country Origin:</p>
+              <h3>{personA.origin_country}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Shelter Location:</p>
+              <h3>
+                {personA.shelters[0].name}, {personA.shelters[0].address},
+                {personA.shelters[0].state}
+              </h3>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="saloncard">
+              <h1>
+                {personB.name}{" "}
+                <em
+                  style={{
+                    textShadow:
+                      "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                  }}
+                >
+                  [Unit Member]
+                </em>
+              </h1>
+              <img
+                src={personB.picture}
+                alt="Profile"
+                width="300px"
+                height="300px"
+              />
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>About you:</p>
+              <h3>{personB.description}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Country Origin:</p>
+              <h3>{personB.origin_country}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Shelter Location:</p>
+              <h3>
+                {personB.shelters[0].name}, {personB.shelters[0].address},
+                {personB.shelters[0].state}
+              </h3>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="saloncard">
+              <h1>
+                {personC.name}{" "}
+                <em
+                  style={{
+                    textShadow:
+                      "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                  }}
+                >
+                  [Unit Member]
+                </em>
+              </h1>
+              <img
+                src={personC.picture}
+                alt="Profile"
+                width="300px"
+                height="300px"
+              />
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>About you:</p>
+              <h3>{personC.description}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Country Origin:</p>
+              <h3>{personC.origin_country}</h3>
+              <p                 class="card-titles"
+                style={{
+                  textShadow:
+                    "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                }}>Shelter Location:</p>
+              <h3>
+                {personC.shelters[0].name}, {personC.shelters[0].address},
+                {personC.shelters[0].state}
+              </h3>
+            </div>
           </div>
         </>
       ) : (
-        <>No data</>
+        <>Loading...</>
       )}
     </div>
   );

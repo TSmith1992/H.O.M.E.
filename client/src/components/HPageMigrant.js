@@ -8,7 +8,12 @@ export default function HPageMigrant({ currentUser }) {
     <div>
       <div className="cardsCenter">
         <h3 className="Title">
-          <em>
+          <em
+            style={{
+              textShadow:
+                "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+            }}
+          >
             Find on this page some general information about you, your shelter,
             and shelter lead!
           </em>

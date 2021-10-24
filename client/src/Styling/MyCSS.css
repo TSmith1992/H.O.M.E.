@@ -4,56 +4,23 @@
   flex-wrap: wrap;
   align-items: center;
   align-content: space-around;
-  /* height: auto;
-  width: 1250px;
-  max-width: 100%; */
-  
-  /* border-radius: 25px;
-  border: 5px solid #BF0A30;
-  color: black;
-  text-align: center;
-  background: #002868;
-  padding: 0 20px;
-  padding: 10px;
-  margin: 0 auto;
-  background: cover; */
 }
-
-/* .card1 {
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  padding: 90px;
-  text-align: center;
-  background-color: #f1f1f1;
-  border: 5px solid #FFFF00;
-  padding-bottom: 18%;
-  margin-bottom: 2;
-  width: 30%;
-  border-radius: 75px
-} */
-/* img {
-  border: 5px solid red;
-} */
 
 .saloncard{
   order: 5;
-  
   background-color: #002868;
     border-radius: 25px;
     color:#cdb891; 
     border: 3px solid white;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     padding: 20px;
+    width: calc(100/3% - 2rem);
+    height: calc(100/3% - 2rem)
   
 }
 .saloncard:hover{
-
   background-color: #f1f1f1;
   color:black;
-      /* min-height: 100%; */
-    /* width: 50%; */
-    /* float: right; */
-
-
 }
 
 .stylistcard{
