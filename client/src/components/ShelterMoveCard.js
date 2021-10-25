@@ -39,14 +39,15 @@ export default function ShelterMoveCard({
   }
 
   return (
-    <div key={shelter.id} className="saloncard" style={{width:'25%'}}>
-      <div style={{textAlign: 'center'}}>
-      <h1>{shelter.name}</h1>
-      <h2>
-        <strong>Lead:</strong> {shelter.lead.name}
-      </h2></div>
-      <div style={{textAlign: 'center'}}>
-      <img src={shelter.picture} alt="shelter" width="300px" height="300px"/>
+    <div key={shelter.id} className="saloncard" style={{ width: "25%" }}>
+      <div style={{ textAlign: "center" }}>
+        <h1>{shelter.name}</h1>
+        <h2>
+          <strong>Lead:</strong> {shelter.lead.name}
+        </h2>
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <img src={shelter.picture} alt="shelter" width="300px" height="300px" />
       </div>
       <p>Address:</p>
       <h2>
@@ -62,17 +63,21 @@ export default function ShelterMoveCard({
         {shelter.current_occupancy}/{shelter.capacity}
       </h2>
       {shelter.current_occupancy > shelter.capacity ? (
-        <strong>
+        <strong style={{ color: "red" }}>
           This shelter is currently above capacity. No new migrants may be moved
           here.
         </strong>
       ) : (
-                            <div style={{textAlign: "center"}}><Button
-        variant="contained"
-        className="login"
-        color="secondary" onClick={RequestChange}>
-          Click here to request this place to move 👋
-        </Button></div>
+        <div style={{ textAlign: "center" }}>
+          <Button
+            variant="contained"
+            className="login"
+            color="secondary"
+            onClick={RequestChange}
+          >
+            Click here to request this place to move 👋
+          </Button>
+        </div>
       )}
     </div>
   );

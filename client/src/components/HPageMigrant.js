@@ -78,7 +78,7 @@ export default function HPageMigrant({ currentUser }) {
                 <div class="card" style={{ backgroundColor: "palevioletred" }}>
                   <div class="card-title" style={{ color: "black" }}>
                     <h3 style={{ color: "black" }}>
-                      <em>Shelter Lead:</em>
+                      <em class="card-titles">Shelter Lead:</em>
                     </h3>{" "}
                     {currentUser.lead_info.name}
                   </div>
@@ -115,7 +115,7 @@ export default function HPageMigrant({ currentUser }) {
                 <div class="card" style={{ backgroundColor: "palevioletred" }}>
                   <div class="card-title" style={{ color: "black" }}>
                     <h3>
-                      <em>Shelter:</em> {currentUser.shelters[0].name}
+                      <em class="card-titles">Shelter:</em><br></br>{currentUser.shelters[0].name}
                     </h3>
                     <p class="card-titles">Address:</p>
                     <h3>{currentUser.shelters[0].address}</h3>
