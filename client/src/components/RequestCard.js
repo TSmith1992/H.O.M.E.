@@ -20,7 +20,7 @@ export default function RequestCard({ currentUser, request }) {
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
-          history.push("/homepage");
+          // history.push("/homepage");
           window.location.reload();
         });
         alert(
