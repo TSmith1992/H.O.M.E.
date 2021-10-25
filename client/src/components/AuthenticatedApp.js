@@ -71,7 +71,7 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           )}
         </span>
         <br></br>
-        <p></p>
+
         <span className="spanLogout">
           Logged in as... <img
           src={currentUser.picture}
@@ -79,11 +79,11 @@ function AuthenticatedApp({ currentUser, setCurrentUser }) {
           width="25px"
           height="25px"
         /><strong>{currentUser.name}</strong>        
-          <p></p>
+          <br></br>
           <button className="logout" onClick={handleLogout}>
             Logout
           </button>
-        </span>
+        </span><br></br>
       </nav>
       <Switch>
         <Route exact path="/homepage">
