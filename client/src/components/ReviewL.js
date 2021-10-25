@@ -74,7 +74,7 @@ export default function ReviewL({ currentUser, reviewsS }) {
       {showMyReviews ? (
         <div className="container1">
           {currentUser.migrant_lead_reviews.map((lReview) => (
-            <div key={lReview.id} class="saloncard">
+            <div key={lReview.id} class="saloncard" style={{width:'20%'}}>
               <div>
                 <div>
                   <div>

@@ -4,7 +4,7 @@ import ShelterMoveCard from "./ShelterMoveCard";
 export default function NoUnitMove({ currentUser, shelters, setChosenMove }) {
 
   return (
-    <div>
+    <div className="container1">
       <br></br><br></br>
       {!shelters ? (
         <>Loading...</>

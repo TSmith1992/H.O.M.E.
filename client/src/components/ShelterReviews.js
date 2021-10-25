@@ -6,7 +6,7 @@ export default function ShelterReviews({ currentUser, reviewsS }) {
       {reviewsS
         .filter((review) => review.shelter.id === currentUser.shelters[0].id)
         .map((lReview) => (
-          <div key={lReview.id} class="saloncard">
+          <div key={lReview.id} class="saloncard" style={{width:'20%'}}>
             <h1>ANONYMOUS:</h1>
             <strong>Review Score: </strong>
             {lReview.score}

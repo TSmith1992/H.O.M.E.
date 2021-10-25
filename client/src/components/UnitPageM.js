@@ -40,16 +40,18 @@ export default function UnitPageM({ currentUser }) {
 
   return (
     <div>
-      <div>
+      <br></br>
+      <div
+        style={{
+          textShadow:
+            "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+          textAlign: "center",
+        }}
+      >
         {" "}
         <strong>
           {" "}
-          <em
-            style={{
-              textShadow:
-                "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
-            }}
-          >
+          <em>
             On this page, you can create or disband a migrant unit group. Only
             unit leaders may disband a unit. You may only form a unit of four(4)
             members. Remember: Being in a unit means you CANNOT be moved to a
@@ -57,6 +59,7 @@ export default function UnitPageM({ currentUser }) {
           </em>
         </strong>
       </div>
+      <br></br>
       <form
         onSubmit={handleSubmit}
         className="authForm"

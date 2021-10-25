@@ -43,17 +43,25 @@ export default function UnitPageInUnit({ currentUser }) {
   return (
     <div>
       {personC && personA && personB ? (
-        <>
-          <Button
-            variant="contained"
-            className="login"
-            color="secondary"
-            onClick={() => setDeleteCon(!deleteCon)}
+        <div>
+          <div
+            style={{
+              textAlign: "center",
+              align: "center",
+              right: "100px",
+            }}
           >
-            Click here disband your unit
-          </Button>
+            <Button
+              variant="contained"
+              className="login"
+              color="secondary"
+              onClick={() => setDeleteCon(!deleteCon)}
+            >
+              Click here disband your unit
+            </Button>
+          </div>
           {deleteCon ? (
-            <span
+            <div
               style={{
                 border: "3px solid white",
                 backgroundColor: "yellow",
@@ -61,6 +69,7 @@ export default function UnitPageInUnit({ currentUser }) {
                   "0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black",
                 textAlign: "center",
                 align: "center",
+                right: "100px",
               }}
             >
               <br></br>
@@ -78,7 +87,7 @@ export default function UnitPageInUnit({ currentUser }) {
               >
                 Confirm Unit Disband ✖️
               </Button>
-            </span>
+            </div>
           ) : (
             <></>
           )}
@@ -129,23 +138,24 @@ export default function UnitPageInUnit({ currentUser }) {
           <br></br>
           <div className="container1">
             <div className="saloncard">
-              <h1>
+              <h1 style={{align: "center", textAlign: "center"}}>
                 {personA.name}{" "}
                 <em
                   style={{
                     textShadow:
-                      "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
+                      "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red"
                   }}
                 >
                   [Unit Member]
                 </em>
               </h1>
+              <div style={{align: "center", textAlign: "center"}}>
               <img
                 src={personA.picture}
                 alt="Profile"
                 width="300px"
                 height="300px"
-              />
+              /></div>
               <p
                 class="card-titles"
                 style={{
@@ -156,17 +166,25 @@ export default function UnitPageInUnit({ currentUser }) {
                 About you:
               </p>
               <h3>{personA.description}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Country Origin:</p>
+                }}
+              >
+                Country Origin:
+              </p>
               <h3>{personA.origin_country}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Shelter Location:</p>
+                }}
+              >
+                Shelter Location:
+              </p>
               <h3>
                 {personA.shelters[0].name}, {personA.shelters[0].address},
                 {personA.shelters[0].state}
@@ -175,7 +193,7 @@ export default function UnitPageInUnit({ currentUser }) {
             <br></br>
             <br></br>
             <div className="saloncard">
-              <h1>
+              <h1 style={{align: "center", textAlign: "center"}}>
                 {personB.name}{" "}
                 <em
                   style={{
@@ -186,29 +204,42 @@ export default function UnitPageInUnit({ currentUser }) {
                   [Unit Member]
                 </em>
               </h1>
+              <div style={{align: "center", textAlign: "center"}}>
               <img
                 src={personB.picture}
                 alt="Profile"
                 width="300px"
                 height="300px"
-              />
-              <p                 class="card-titles"
+              /></div>
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>About you:</p>
+                }}
+              >
+                About you:
+              </p>
               <h3>{personB.description}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Country Origin:</p>
+                }}
+              >
+                Country Origin:
+              </p>
               <h3>{personB.origin_country}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Shelter Location:</p>
+                }}
+              >
+                Shelter Location:
+              </p>
               <h3>
                 {personB.shelters[0].name}, {personB.shelters[0].address},
                 {personB.shelters[0].state}
@@ -217,7 +248,7 @@ export default function UnitPageInUnit({ currentUser }) {
             <br></br>
             <br></br>
             <div className="saloncard">
-              <h1>
+              <h1 style={{align: "center", textAlign: "center"}}>
                 {personC.name}{" "}
                 <em
                   style={{
@@ -228,36 +259,49 @@ export default function UnitPageInUnit({ currentUser }) {
                   [Unit Member]
                 </em>
               </h1>
+              <div style={{align: "center", textAlign: "center"}}>
               <img
                 src={personC.picture}
                 alt="Profile"
                 width="300px"
                 height="300px"
-              />
-              <p                 class="card-titles"
+              /></div>
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>About you:</p>
+                }}
+              >
+                About you:
+              </p>
               <h3>{personC.description}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Country Origin:</p>
+                }}
+              >
+                Country Origin:
+              </p>
               <h3>{personC.origin_country}</h3>
-              <p                 class="card-titles"
+              <p
+                class="card-titles"
                 style={{
                   textShadow:
                     "0 0 1px red, 0 0 1px red, 0 0 1px red, 0 0 1px red",
-                }}>Shelter Location:</p>
+                }}
+              >
+                Shelter Location:
+              </p>
               <h3>
                 {personC.shelters[0].name}, {personC.shelters[0].address},
                 {personC.shelters[0].state}
               </h3>
             </div>
           </div>
-        </>
+        </div>
       ) : (
         <>Loading...</>
       )}

@@ -5,6 +5,7 @@ import UnitMove from "./UnitMove";
 export default function MoveM({ currentUser, shelters, setChosenMove }) {
   return (
     <div>
+      <br></br><br></br>
       {currentUser.unit_member !== true ? (
         <NoUnitMove
           shelters={shelters}

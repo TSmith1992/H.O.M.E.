@@ -9,7 +9,7 @@ export default function LeadReviews({ currentUser, reviews }) {
           {reviews
             .filter((review) => review.lead.id === currentUser.lead_info.id)
             .map((lReview) => (
-              <div key={lReview.id} class="saloncard">
+              <div key={lReview.id} class="saloncard" style={{width:'20%'}}>
                 <h1>ANONYMOUS:</h1>
                 <strong>Review Score: </strong>
                 {lReview.score}

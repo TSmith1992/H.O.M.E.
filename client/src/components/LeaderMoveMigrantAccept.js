@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import Button from "@mui/material/Button";
 
 export default function LeaderMoveMigrantAccept({ location, place }) {
   const history = useHistory();
@@ -24,7 +25,7 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
       if (res.ok) {
         res.json().then((user) => {
           fetch(`/migrant_shelters/${place.id}`, {
-            method: "DELETE"
+            method: "DELETE",
           });
           window.location.reload();
           history.push("/homepage");
@@ -40,7 +41,9 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
   }
   return (
     <div>
-      <button onClick={MoveMigrant}>Move Migrant to this location</button>
+      <Button variant="contained" color="primary" onClick={MoveMigrant}>
+        Move Migrant to this location ✅
+      </Button>
       <p>
         {errors ? (
           <>

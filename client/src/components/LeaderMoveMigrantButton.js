@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LeaderMoveMigrantAccept from "./LeaderMoveMigrantAccept";
+import Button from "@mui/material/Button";
 
 export default function LeaderMoveMigrantButton({
   place,
@@ -9,15 +10,20 @@ export default function LeaderMoveMigrantButton({
   const [revealS, setRevealS] = useState(false);
   return (
     <div>
-      <button onClick={() => setRevealS(!revealS)}>Show Move Options</button>
+      <Button
+        variant="contained"
+        color="secondary"
+        onClick={() => setRevealS(!revealS)}
+      >
+        Move Options 🏘️
+      </Button>
       {revealS ? (
         currentUser.shelters
           .filter((s) => s.name !== place.shelter.name)
           .map((location) => (
             <div>
-              Move options are below:
-              <div>
-                {location.name}
+              <div><strong>
+                {location.name}</strong>
                 <br></br>
                 <img
                   src={location.picture}
@@ -32,7 +38,7 @@ export default function LeaderMoveMigrantButton({
                     new migrants here until there is sufficient space
                   </em>
                 ) : (
-                  <LeaderMoveMigrantAccept location={location} place={place}/>
+                  <LeaderMoveMigrantAccept location={location} place={place} />
                 )}
               </div>
             </div>

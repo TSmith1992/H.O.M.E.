@@ -67,12 +67,12 @@ export default function HPageMigrant({ currentUser }) {
       </div>
       <br></br>
       <div class="container">
-        <Card sx={{ maxWidth: 500 }}>
+        <Card sx={{ maxWidth: 750 }}>
           <div className="card-container">
             <div class="float-layout">
               <div
                 class="card-image"
-                style={{ height: "620px", width: "500px", align: "center" }}
+                style={{ height: "620px", width: "800px", align: "center" }}
               >
                 <img src={currentUser.lead_info.picture} alt="Shelter Lead" />
                 <div class="card" style={{ backgroundColor: "palevioletred" }}>
@@ -92,6 +92,7 @@ export default function HPageMigrant({ currentUser }) {
                     variant="contained"
                     className="login"
                     color="secondary"
+                    style={{justifyContent: "center"}}
                   >
                     <Link to="/reviews" style={{ color: "white" }}>
                       Read more about {currentUser.lead_info.name} 📖

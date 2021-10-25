@@ -39,7 +39,7 @@ export default function ShelterMoveCard({
   }
 
   return (
-    <div key={shelter.id} className="saloncard">
+    <div key={shelter.id} className="saloncard" style={{width:'25%'}}>
       <div style={{textAlign: 'center'}}>
       <h1>{shelter.name}</h1>
       <h2>
