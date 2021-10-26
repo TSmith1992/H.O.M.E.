@@ -71,7 +71,10 @@ export default function RequestCard({ currentUser, request }) {
           className="authForm"
           style={{ width: "100%", textAlign: "center", color:'white' }}
         >
-          <strong>Name of Migrant:</strong> {request.migrant.name}
+          <strong style={{
+              textShadow:
+                "0 0 1px green, 0 0 1px green, 0 0 1px green, 0 0 1px green",
+            }}>Name of Migrant:</strong> {request.migrant.name}
           <br></br>
           <img
             src={request.migrant.picture}
@@ -80,10 +83,16 @@ export default function RequestCard({ currentUser, request }) {
             height="300px"
           />
           <br></br>
-          <strong>Description:</strong> {request.migrant.description}
+          <strong style={{
+              textShadow:
+                "0 0 1px green, 0 0 1px green, 0 0 1px green, 0 0 1px green",
+            }}>Description:</strong> {request.migrant.description}
           <br></br>
           <br></br>
-          <strong>Requested Location:</strong> {request.shelter.name}
+          <strong style={{
+              textShadow:
+                "0 0 1px green, 0 0 1px green, 0 0 1px green, 0 0 1px green",
+            }}>Requested Location:</strong> {request.shelter.name}
           <br></br><br></br>
           <img
             src={request.shelter.picture}
@@ -92,9 +101,15 @@ export default function RequestCard({ currentUser, request }) {
             height="300px"
           />
           <br></br><br></br>
-          <strong>Description:</strong> {request.shelter.description}
+          <strong style={{
+              textShadow:
+                "0 0 1px green, 0 0 1px green, 0 0 1px green, 0 0 1px green",
+            }}>Description:</strong> {request.shelter.description}
           <br></br><br></br>
-          <strong>Capacity:</strong> {request.shelter.capacity}
+          <strong style={{
+              textShadow:
+                "0 0 1px green, 0 0 1px green, 0 0 1px green, 0 0 1px green",
+            }}>Capacity:</strong> {request.shelter.capacity}
           <br></br><br></br>
           <Button
             variant="contained"

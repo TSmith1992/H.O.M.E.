@@ -28,7 +28,6 @@ export default function LeaderMoveMigrantAccept({ location, place }) {
             method: "DELETE",
           });
           window.location.reload();
-          history.push("/homepage");
         });
         alert(`Success! You have moved the migrant to a new shelter!`);
       } else {

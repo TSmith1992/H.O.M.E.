@@ -44,7 +44,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
           setCurrentUser(user);
           history.push("/homepage");
         });
-        alert("You have successfully updated your profile ✅!");
+        alert("You have successfully updated your profile! ✅");
       } else {
         res.json().then((errors) => {
           // console.log(errors);

@@ -44,6 +44,7 @@
     -moz-osx-font-smoothing: grayscale;
     background: #B8E2F2;
     position: relative;
+    padding-bottom: 25px;
     }
   
     code {

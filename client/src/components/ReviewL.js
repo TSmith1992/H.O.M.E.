@@ -150,7 +150,7 @@ export default function ReviewL({ currentUser, reviewsS }) {
                       alignItems: "center",
                       alignContent: "center",
                     }}
-                  >
+                    >
                     {showReviews ? (
                       <ShelterReviewsLead
                         currentUser={currentUser}
