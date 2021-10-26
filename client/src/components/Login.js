@@ -59,7 +59,7 @@ function Login({ setCurrentUser }) {
         </h1>
         <p>
           <label htmlFor="name" style={{ "font-size": "25px", color: "black" }}>
-            🕴️ Name:
+            🔠 Name:
           </label>
           <br></br>
           <input

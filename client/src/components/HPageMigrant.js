@@ -67,7 +67,7 @@ export default function HPageMigrant({ currentUser }) {
       </div>
       <br></br>
       <div class="container">
-        <Card sx={{ maxWidth: 750 }}>
+        <Card sx={{ maxWidth: 750, maxHeight: 630 }}>
           <div className="card-container">
             <div class="float-layout">
               <div
