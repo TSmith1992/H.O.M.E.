@@ -133,7 +133,7 @@ export default function MProfileEdit({ currentUser, setCurrentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li>{error}</li>
+                  <li style={{ color: "palevioletred" }}>{error}</li>
                 </strong>
               ))}
             </>

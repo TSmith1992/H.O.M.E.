@@ -155,10 +155,6 @@ function Signup({ setCurrentUser, currentUser }) {
           {!!countryArr?.length &&
             countryArr.map(({ label, value }) => (
               <option>{label}</option>
-              // <key={value} value={value}>
-
-              //   {label}
-              // </>
             ))}
         </select>
         <p>

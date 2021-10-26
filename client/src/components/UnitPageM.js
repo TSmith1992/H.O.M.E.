@@ -129,7 +129,7 @@ export default function UnitPageM({ currentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li style={{ color: "palevioletred" }}>{error}</li>
+                  <li style={{ color: "red" }}>{error}</li>
                 </strong>
               ))}
             </>

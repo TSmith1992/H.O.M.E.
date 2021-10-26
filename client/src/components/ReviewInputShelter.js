@@ -76,7 +76,7 @@ export default function ReviewInputShelter({ currentUser }) {
             <>
               {errors.errors.map((error) => (
                 <strong key={error}>
-                  <li>{error}</li>
+                  <li style={{ color: "red" }}>{error}</li>
                 </strong>
               ))}
             </>
