@@ -78,7 +78,7 @@ function Signup({ setCurrentUser, currentUser }) {
         backgroundRepeat: "no-repeat",
         fontWeight: "bold",
         textShadow:
-          "0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black",
+          "0 0 20px black, 0 0 20px black, 0 0 20px black, 0 0 20px black",
       }}
     >
       <form onSubmit={handleSubmit}>
