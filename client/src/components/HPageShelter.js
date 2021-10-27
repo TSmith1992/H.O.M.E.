@@ -4,7 +4,14 @@ import Card from "@mui/material/Card";
 export default function HPageShelter({ shelter }) {
   // console.log('shelter, ', shelter)
   return (
-    <Card sx={{ maxWidth: 500 }} style={{ backgroundColor: "palevioletred", border: '3px solid red', borderRadius:'25px' }}>
+    <Card
+      sx={{ maxWidth: 500 }}
+      style={{
+        backgroundColor: "palevioletred",
+        border: "3px solid red",
+        borderRadius: "25px",
+      }}
+    >
       <div className="card-container" style={{ textAlign: "center" }}>
         <div class="float-layout">
           <h1 style={{ textAlign: "center" }}>{shelter.name}</h1>
