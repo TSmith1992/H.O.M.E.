@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
 export default function ShelterEdit({ shelter }) {
-  const history = useHistory();
   const [name, setName] = useState("");
   const [picture, setPicture] = useState("");
   const [description, setDescription] = useState("");
