@@ -72,13 +72,13 @@ function Signup({ setCurrentUser, currentUser }) {
     <div
       className="authForm"
       style={{
-        color: 'black',
+        color: 'white',
         backgroundImage: `url(${"https://www.bu.edu/files/2019/09/resized-iStock-1158476263.jpg"})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         fontWeight: "bold",
         textShadow:
-          "0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow, 0 0 1px yellow",
+          "0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black",
       }}
     >
       <form onSubmit={handleSubmit}>

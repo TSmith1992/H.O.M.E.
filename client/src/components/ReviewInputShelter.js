@@ -25,8 +25,8 @@ export default function ReviewInputShelter({ currentUser }) {
       if (res.ok) {
         res.json().then((user) => {
           alert('Thank you. Your comment has been posted.')
-          // history.push("/homepage");
-          window.location.reload();
+          history.push("/homepage");
+          // window.location.reload();
         });
       } else {
         res.json().then((errors) => {
