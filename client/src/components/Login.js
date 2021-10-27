@@ -44,7 +44,7 @@ function Login({ setCurrentUser }) {
           Welcome{" "}
           <div>
           <strong>
-            <em style={{ fontSize: '100px', color:'white',         textShadow:
+            <em style={{ fontSize: '90px', color:'white',         textShadow:
           "0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black" }}>H.O.M.E.</em>
           </strong></div>
           <p>
