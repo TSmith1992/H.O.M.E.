@@ -42,9 +42,11 @@ function Login({ setCurrentUser }) {
       <form onSubmit={handleSubmit}>
         <h1>
           Welcome{" "}
+          <div>
           <strong>
-            <em>H.O.M.E.</em>
-          </strong>
+            <em style={{ fontSize: '125px', color:'white',         textShadow:
+          "0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black" }}>H.O.M.E.</em>
+          </strong></div>
           <p>
             <em>House of Migrants and Expats</em>
             <p></p>
